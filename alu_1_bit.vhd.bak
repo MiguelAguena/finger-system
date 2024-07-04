@@ -22,7 +22,7 @@ architecture alu_1_bit_1 of alu_1_bit is
 begin
     a_aux <= A;
 
-    b_aux <= (NOT B) when Op = "01" else
+    b_aux <= (NOT B) when OP = "01" else
              B;
 
     and_aux <= a_aux AND b_aux;

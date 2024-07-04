@@ -1,0 +1,6 @@
+ALU
+S   OP
+00  add (+B)
+01  add (-B)
+10  and
+11  or

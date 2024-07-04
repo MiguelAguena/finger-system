@@ -3,23 +3,22 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use std.textio.all;
 
-entity ram is
+entity rom is
     generic (
         addr_s : natural := 16;
         word_s : natural := 16;
-        init_f : string  := "ram.dat"
+        init_f : string  := "rom.dat"
     );
     port (
-        ck     : in  std_logic;
-        rd, wr : in  std_logic;
-        addr   : in  std_logic_vector(addr_s-1 downto 0);
-        data_i : in  std_logic_vector(word_s-1 downto 0);
-        data_o : out std_logic_vector(word_s-1 downto 0)
+        addr : in  std_logic_vector(addr_s-1 downto 0);
+        data : out std_logic_vector(word_s-1 downto 0)
     );
-end ram;
+end rom;
 
-architecture ram_1 of ram is
+architecture rom_1 of rom is
     type memory_type is array (0 to (2 ** addr_s) - 1) of std_logic_vector(word_s-1 downto 0);
+
+    signal mem : memory_type;
 
     impure function init_mem(mif_file_name : in string) return memory_type is
         file mif_file : text open read_mode is mif_file_name;
@@ -45,14 +44,7 @@ architecture ram_1 of ram is
         return temp_mem;
     end function;
 
-    signal mem : memory_type := init_mem(init_f);
 begin
-    p0: process (ck) is
-    begin
-        if(ck = '1' AND wr = '1') then
-            mem(to_integer(unsigned(addr))) <= data_i;
-        end if;
-    end process p0;
-
-    data_o <= mem(to_integer(unsigned(addr)));
+    mem <= init_mem(init_f);
+    data <= mem(to_integer(unsigned(addr)));
 end architecture;

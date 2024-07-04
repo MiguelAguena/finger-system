@@ -1,0 +1,30 @@
+NOP -- Does nothing for 1 CPU cycle
+0000000000000000
+
+ALU Instructions -- REGD = REG2 (ALU) REG1
+SEL-REGD-REG2-REG1-ALU-(unused)
+001-xxx -xxx -xxx -xx -00
+
+Immediate Load -- REGD = IMM
+SEL-REGD-IMM
+010-xxx -xxxxxxxxxx
+
+Immediate ALU Instructions -- REGD = REG1 (ALU) IMM 
+SEL-REGD-REG1-ALU-IMM  
+011-xxx -xxx -xx -xxxxx
+
+Branch if Equal -- JL=PC; PC=REGM if REG1 = 0
+SEL-REGM-REG1-(unused) 
+100-xxx -xxx -0000000
+
+Branch if Negative -- JL=PC; PC=REGM if REG1 < 0
+SEL-REGM-REG1-(unused) 
+101-xxx -xxx -0000000
+
+Load -- REGD = [REG1]
+SEL-REGD-REG1-(unused)
+110-xxx -xxx -xxxxxxx
+
+Store -- [REGM] = REG1
+SEL-REGM-REG1-(unused)
+111-xxx -xxx -xxxxxxx
