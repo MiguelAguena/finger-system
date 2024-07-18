@@ -11,7 +11,7 @@ entity ram is
     );
     port (
         ck     : in  std_logic;
-        rd, wr : in  std_logic;
+        wr     : in  std_logic;
         addr   : in  std_logic_vector(addr_s-1 downto 0);
         data_i : in  std_logic_vector(word_s-1 downto 0);
         data_o : out std_logic_vector(word_s-1 downto 0)
@@ -33,10 +33,10 @@ architecture ram_1 of ram is
             read(mif_line, current_char);
 				
 				for j in 0 to word_s-1 loop
-					if current_char = '0' then
-						current_word(word_s - 1 - j) := '0';
-					else
+					if current_char = '1' then
 						current_word(word_s - 1 - j) := '1';
+					else
+						current_word(word_s - 1 - j) := '0';
 					end if;
 				end loop;
 				
@@ -47,12 +47,26 @@ architecture ram_1 of ram is
 
     signal mem : memory_type := init_mem(init_f);
 begin
-    p0: process (ck) is
+    p0: process (ck, wr, data_i, addr) is
     begin
         if(ck = '1' AND wr = '1') then
             mem(to_integer(unsigned(addr))) <= data_i;
         end if;
     end process p0;
 
-    data_o <= mem(to_integer(unsigned(addr)));
+    data_o <= mem(to_integer(unsigned(addr(addr_s-1 downto 1))));
+end architecture;
+
+architecture ram_modelsim of ram is
+    type memory_type is array (0 to (2 ** addr_s) - 1) of std_logic_vector(word_s-1 downto 0);
+    signal mem : memory_type := (others => (others => '0'));
+begin
+    p0: process (ck, wr, data_i, addr) is
+    begin
+        if(ck = '1' AND wr = '1') then
+            mem(to_integer(unsigned(addr))) <= data_i;
+        end if;
+    end process p0;
+
+    data_o <= mem(to_integer(unsigned(addr(addr_s-1 downto 1))));
 end architecture;

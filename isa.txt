@@ -13,7 +13,7 @@ Immediate ALU Instructions -- REGD = REG1 (ALU) IMM
 SEL-REGD-REG1-ALU-IMM  
 011-xxx -xxx -xx -xxxxx
 
-Branch if Equal -- JL=PC; PC=REGM if REG1 = 0
+Branch if Zero -- JL=PC; PC=REGM if REG1 = 0
 SEL-REGM-REG1-(unused) 
 100-xxx -xxx -0000000
 

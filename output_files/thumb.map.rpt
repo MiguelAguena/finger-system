@@ -1,5 +1,5 @@
 Analysis & Synthesis report for thumb
-Thu Jul  4 15:15:10 2024
+Thu Jul 18 11:22:02 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -13,38 +13,41 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. Logic Cells Representing Combinational Loops
   9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |thumb_cpu
- 12. Parameter Settings for User Entity Instance: alu:ADDER2
- 13. Parameter Settings for User Entity Instance: regfile:REGS
- 14. Parameter Settings for User Entity Instance: register_d:REG_IF_EX
- 15. Parameter Settings for User Entity Instance: alu:GENALU
- 16. Parameter Settings for User Entity Instance: register_d:REG_EX_WB
- 17. Port Connectivity Checks: "register_d:REG_EX_WB"
- 18. Port Connectivity Checks: "alu:GENALU"
- 19. Port Connectivity Checks: "register_d:REG_IF_EX"
- 20. Port Connectivity Checks: "regfile:REGS"
- 21. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"
- 22. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"
- 23. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"
- 24. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"
- 25. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"
- 26. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"
- 27. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"
- 28. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"
- 29. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"
- 30. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"
- 31. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"
- 32. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"
- 33. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"
- 34. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"
- 35. Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"
- 36. Port Connectivity Checks: "alu:ADDER2"
- 37. Post-Synthesis Netlist Statistics for Top Partition
- 38. Elapsed Time Per Partition
- 39. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: thumb_cpu:DUT
+ 11. Parameter Settings for User Entity Instance: thumb_cpu:DUT|alu:ADDER2
+ 12. Parameter Settings for User Entity Instance: thumb_cpu:DUT|regfile:REGS
+ 13. Parameter Settings for User Entity Instance: thumb_cpu:DUT|register_d:REG_IF_EX
+ 14. Parameter Settings for User Entity Instance: thumb_cpu:DUT|alu:GENALU
+ 15. Parameter Settings for User Entity Instance: thumb_cpu:DUT|register_d:REG_EX_WB
+ 16. Parameter Settings for User Entity Instance: rom:MEM_INST
+ 17. Parameter Settings for User Entity Instance: ram:MEM_DATA
+ 18. Port Connectivity Checks: "ram:MEM_DATA"
+ 19. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"
+ 20. Port Connectivity Checks: "thumb_cpu:DUT|alu:GENALU"
+ 21. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_IF_EX"
+ 22. Port Connectivity Checks: "thumb_cpu:DUT|regfile:REGS"
+ 23. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"
+ 24. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"
+ 25. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"
+ 26. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"
+ 27. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"
+ 28. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"
+ 29. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"
+ 30. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"
+ 31. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"
+ 32. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"
+ 33. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"
+ 34. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"
+ 35. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"
+ 36. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"
+ 37. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"
+ 38. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2"
+ 39. Port Connectivity Checks: "thumb_cpu:DUT"
+ 40. Post-Synthesis Netlist Statistics for Top Partition
+ 41. Elapsed Time Per Partition
+ 42. Analysis & Synthesis Messages
 
 
 
@@ -71,14 +74,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jul  4 15:15:10 2024          ;
+; Analysis & Synthesis Status     ; Successful - Thu Jul 18 11:22:02 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; thumb                                          ;
-; Top-level Entity Name           ; thumb_cpu                                      ;
+; Top-level Entity Name           ; thumb_cpu_tb                                   ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 197                                            ;
-; Total pins                      ; 86                                             ;
+; Total registers                 ; 0                                              ;
+; Total pins                      ; 31                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
 ; Total DSP Blocks                ; 0                                              ;
@@ -97,7 +100,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
-; Top-level entity name                                                           ; thumb_cpu          ; thumb              ;
+; Top-level entity name                                                           ; thumb_cpu_tb       ; thumb              ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -187,124 +190,105 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                             ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                      ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
-; alu.vhd                          ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/alu.vhd        ;         ;
-; alu_1_bit.vhd                    ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/alu_1_bit.vhd  ;         ;
-; thumb_cpu.vhd                    ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/thumb_cpu.vhd  ;         ;
-; register_d.vhd                   ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/register_d.vhd ;         ;
-; regfile.vhd                      ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/regfile.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; thumb_cpu_tb.vhd                 ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/alu.vhd          ;         ;
+; alu_1_bit.vhd                    ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/alu_1_bit.vhd    ;         ;
+; thumb_cpu.vhd                    ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/thumb_cpu.vhd    ;         ;
+; ram.vhd                          ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/ram.vhd          ;         ;
+; register_d.vhd                   ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/register_d.vhd   ;         ;
+; regfile.vhd                      ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/regfile.vhd      ;         ;
+; rom.vhd                          ; yes             ; User VHDL File  ; /home/miguelaguena/Documents/thumb/rom.vhd          ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 189         ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 266         ;
-;     -- 7 input functions                    ; 2           ;
-;     -- 6 input functions                    ; 98          ;
-;     -- 5 input functions                    ; 100         ;
-;     -- 4 input functions                    ; 15          ;
-;     -- <=3 input functions                  ; 51          ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 197         ;
-;                                             ;             ;
-; I/O pins                                    ; 86          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 197         ;
-; Total fan-out                               ; 2068        ;
-; Average fan-out                             ; 3.26        ;
-+---------------------------------------------+-------------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimate of Logic utilization (ALMs needed) ; 16     ;
+;                                             ;        ;
+; Combinational ALUT usage for logic          ; 31     ;
+;     -- 7 input functions                    ; 0      ;
+;     -- 6 input functions                    ; 0      ;
+;     -- 5 input functions                    ; 0      ;
+;     -- 4 input functions                    ; 0      ;
+;     -- <=3 input functions                  ; 31     ;
+;                                             ;        ;
+; Dedicated logic registers                   ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 31     ;
+;                                             ;        ;
+; Total DSP Blocks                            ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; Add0~1 ;
+; Maximum fan-out                             ; 3      ;
+; Total fan-out                               ; 123    ;
+; Average fan-out                             ; 1.32   ;
++---------------------------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
-; |thumb_cpu                                ; 266 (187)           ; 197 (0)                   ; 0                 ; 0          ; 86   ; 0            ; |thumb_cpu                                              ; thumb_cpu   ; work         ;
-;    |alu:GENALU|                           ; 65 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU                                   ; alu         ; work         ;
-;       |alu_1_bit:\ALUS:0:FIRST:ALU_FIRST| ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:10:MID:ALU_I|      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:10:MID:ALU_I      ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:11:MID:ALU_I|      ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:11:MID:ALU_I      ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:12:MID:ALU_I|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:12:MID:ALU_I      ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:13:MID:ALU_I|      ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:13:MID:ALU_I      ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:14:MID:ALU_I|      ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:14:MID:ALU_I      ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:15:LAST:ALU_LAST|  ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:15:LAST:ALU_LAST  ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:1:MID:ALU_I|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:1:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:2:MID:ALU_I|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:2:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:3:MID:ALU_I|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:3:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:4:MID:ALU_I|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:4:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:5:MID:ALU_I|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:5:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:6:MID:ALU_I|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:6:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:7:MID:ALU_I|       ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:7:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:8:MID:ALU_I|       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:8:MID:ALU_I       ; alu_1_bit   ; work         ;
-;       |alu_1_bit:\ALUS:9:MID:ALU_I|       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:9:MID:ALU_I       ; alu_1_bit   ; work         ;
-;    |regfile:REGS|                         ; 6 (6)               ; 96 (96)                   ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|regfile:REGS                                 ; regfile     ; work         ;
-;    |register_d:REG_EX_WB|                 ; 0 (0)               ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|register_d:REG_EX_WB                         ; register_d  ; work         ;
-;    |register_d:REG_IF_EX|                 ; 8 (8)               ; 57 (57)                   ; 0                 ; 0          ; 0    ; 0            ; |thumb_cpu|register_d:REG_IF_EX                         ; register_d  ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
+; |thumb_cpu_tb              ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 31   ; 0            ; |thumb_cpu_tb       ; thumb_cpu_tb ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+----------------------------------------+-----------------------------------------+
-; Register name                          ; Reason for Removal                      ;
-+----------------------------------------+-----------------------------------------+
-; register_d:REG_IF_EX|IQ[55..59]        ; Merged with register_d:REG_IF_EX|IQ[54] ;
-; regfile:REGS|regbank[0][15]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][15]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][14]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][14]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][13]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][13]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][12]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][12]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][11]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][11]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][10]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][10]            ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][9]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][9]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][8]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][8]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][7]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][7]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][6]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][6]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][5]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][5]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][4]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][4]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][3]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][3]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][2]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][2]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][1]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][1]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[0][0]             ; Stuck at GND due to stuck port data_in  ;
-; regfile:REGS|regbank[7][0]             ; Stuck at GND due to stuck port data_in  ;
-; Total Number of Removed Registers = 37 ;                                         ;
-+----------------------------------------+-----------------------------------------+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; counter[0]~0                                           ;    ;
+; counter[1]~1                                           ;    ;
+; counter[2]~2                                           ;    ;
+; counter[3]~3                                           ;    ;
+; counter[4]~4                                           ;    ;
+; counter[5]~5                                           ;    ;
+; counter[6]~6                                           ;    ;
+; counter[7]~7                                           ;    ;
+; counter[8]~8                                           ;    ;
+; counter[9]~9                                           ;    ;
+; counter[10]~10                                         ;    ;
+; counter[11]~11                                         ;    ;
+; counter[12]~12                                         ;    ;
+; counter[13]~13                                         ;    ;
+; counter[14]~14                                         ;    ;
+; counter[15]~15                                         ;    ;
+; counter[16]~16                                         ;    ;
+; counter[17]~17                                         ;    ;
+; counter[18]~18                                         ;    ;
+; counter[19]~19                                         ;    ;
+; counter[20]~20                                         ;    ;
+; counter[21]~21                                         ;    ;
+; counter[22]~22                                         ;    ;
+; counter[23]~23                                         ;    ;
+; counter[24]~24                                         ;    ;
+; counter[25]~25                                         ;    ;
+; counter[26]~26                                         ;    ;
+; counter[27]~27                                         ;    ;
+; counter[28]~28                                         ;    ;
+; counter[29]~29                                         ;    ;
+; counter[30]~30                                         ;    ;
+; Number of logic cells representing combinational loops ; 31 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -312,148 +296,153 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 197   ;
-; Number of registers using Synchronous Clear  ; 181   ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[47]              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[4][8]               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[2][8]               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[6][14]              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[1][15]              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[5][4]               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |thumb_cpu|regfile:REGS|regbank[3][11]              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[1]               ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[4]               ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[51]              ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[37]              ;
-; 10:1               ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; Yes        ; |thumb_cpu|register_d:REG_IF_EX|IQ[21]              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |thumb_cpu|s_alu_a[15]                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:2:MID:ALU_I|F ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |thumb_cpu|s_rr1[2]                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |thumb_cpu|s_rr2[2]                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |thumb_cpu|s_alu_b[10]                              ;
-; 5:1                ; 10 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |thumb_cpu|s_alu_b[0]                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |thumb_cpu ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; reg_n          ; 8     ; Signed Integer                                   ;
-; word_size      ; 16    ; Signed Integer                                   ;
-; irq_size       ; 2     ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT ;
++----------------+------------------+------------------------+
+; Parameter Name ; Value            ; Type                   ;
++----------------+------------------+------------------------+
+; reg_n          ; 8                ; Signed Integer         ;
+; word_size      ; 16               ; Signed Integer         ;
+; irq_size       ; 2                ; Signed Integer         ;
+; pc_reset       ; 1111111111111110 ; Unsigned Binary        ;
++----------------+------------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: alu:ADDER2 ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; size           ; 16    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT|alu:ADDER2 ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; size           ; 16    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT|regfile:REGS ;
++----------------+------------------+-------------------------------------+
+; Parameter Name ; Value            ; Type                                ;
++----------------+------------------+-------------------------------------+
+; reg_n          ; 8                ; Signed Integer                      ;
+; word_s         ; 16               ; Signed Integer                      ;
+; pc_reset       ; 1111111111111110 ; Unsigned Binary                     ;
++----------------+------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT|register_d:REG_IF_EX ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 63    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT|alu:GENALU ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; size           ; 16    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: thumb_cpu:DUT|register_d:REG_EX_WB ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 45    ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: regfile:REGS ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; reg_n          ; 8     ; Signed Integer                   ;
-; word_s         ; 16    ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
+; Parameter Settings for User Entity Instance: rom:MEM_INST ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; addr_s         ; 16      ; Signed Integer                 ;
+; word_s         ; 16      ; Signed Integer                 ;
+; init_f         ; rom.dat ; String                         ;
++----------------+---------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_d:REG_IF_EX ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; n              ; 63    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------+
-; Parameter Settings for User Entity Instance: alu:GENALU ;
-+----------------+-------+--------------------------------+
-; Parameter Name ; Value ; Type                           ;
-+----------------+-------+--------------------------------+
-; size           ; 16    ; Signed Integer                 ;
-+----------------+-------+--------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_d:REG_EX_WB ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; n              ; 45    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ram:MEM_DATA ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; addr_s         ; 16      ; Signed Integer                 ;
+; word_s         ; 16      ; Signed Integer                 ;
+; init_f         ; ram.dat ; String                         ;
++----------------+---------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "register_d:REG_EX_WB"                                                                 ;
+; Port Connectivity Checks: "ram:MEM_DATA"                                                                         ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port   ; Type   ; Severity ; Details                                                                             ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
-; clear  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"                                                   ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 ; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; q[3]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:GENALU"                                                                         ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:GENALU"                                                           ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
-; n    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; ov   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; co   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------+
-; Port Connectivity Checks: "register_d:REG_IF_EX" ;
-+--------+-------+----------+----------------------+
-; Port   ; Type  ; Severity ; Details              ;
-+--------+-------+----------+----------------------+
-; clear  ; Input ; Info     ; Stuck at GND         ;
-; enable ; Input ; Info     ; Stuck at VCC         ;
-+--------+-------+----------+----------------------+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_IF_EX" ;
++--------+-------+----------+------------------------------------+
+; Port   ; Type  ; Severity ; Details                            ;
++--------+-------+----------+------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                       ;
++--------+-------+----------+------------------------------------+
 
 
-+----------------------------------------------+
-; Port Connectivity Checks: "regfile:REGS"     ;
-+------------+-------+----------+--------------+
-; Port       ; Type  ; Severity ; Details      ;
-+------------+-------+----------+--------------+
-; regwritepc ; Input ; Info     ; Stuck at VCC ;
-+------------+-------+----------+--------------+
++--------------------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT|regfile:REGS" ;
++------------+-------+----------+------------------------+
+; Port       ; Type  ; Severity ; Details                ;
++------------+-------+----------+------------------------+
+; regwritepc ; Input ; Info     ; Stuck at VCC           ;
++------------+-------+----------+------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"                                       ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"                         ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -462,7 +451,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -471,7 +460,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -480,7 +469,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -489,7 +478,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -498,7 +487,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -507,7 +496,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -516,7 +505,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -525,7 +514,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -534,7 +523,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"                               ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -543,7 +532,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"                                            ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -552,7 +541,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"                                            ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -561,7 +550,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"                                            ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -570,7 +559,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"                                            ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -579,7 +568,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"                                            ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"                              ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type   ; Severity ; Details                                                                             ;
 +------+--------+----------+-------------------------------------------------------------------------------------+
@@ -588,7 +577,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:ADDER2"                                                                             ;
+; Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2"                                                               ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
@@ -603,29 +592,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT"                                                                           ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; reset     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; interrupt ; Input  ; Info     ; Stuck at GND                                                                        ;
+; irq       ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 197                         ;
-;     ENA SCLR          ; 96                          ;
-;     SCLR              ; 85                          ;
-;     plain             ; 16                          ;
-; arriav_lcell_comb     ; 267                         ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 265                         ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 15                          ;
-;         5 data inputs ; 100                         ;
-;         6 data inputs ; 98                          ;
-; boundary_port         ; 86                          ;
+; arriav_lcell_comb     ; 31                          ;
+;     arith             ; 30                          ;
+;         1 data inputs ; 29                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 1                           ;
+;         1 data inputs ; 1                           ;
+; boundary_port         ; 31                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 5.17                        ;
+; Max LUT depth         ; 3.90                        ;
+; Average LUT depth     ; 2.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -634,7 +627,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -644,10 +637,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Thu Jul  4 15:14:56 2024
+    Info: Processing started: Thu Jul 18 11:21:37 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off thumb -c thumb
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file thumb_cpu_tb.vhd
+    Info (12022): Found design unit 1: thumb_cpu_tb-arch File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 11
+    Info (12023): Found entity 1: thumb_cpu_tb File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 5
+Warning (12019): Can't analyze file -- file sign_extend.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-alu_1 File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 21
     Info (12023): Found entity 1: alu File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 5
@@ -655,85 +652,54 @@ Info (12021): Found 2 design units, including 1 entities, in source file alu_1_b
     Info (12022): Found design unit 1: alu_1_bit-alu_1_bit_1 File: /home/miguelaguena/Documents/thumb/alu_1_bit.vhd Line: 16
     Info (12023): Found entity 1: alu_1_bit File: /home/miguelaguena/Documents/thumb/alu_1_bit.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file thumb_cpu.vhd
-    Info (12022): Found design unit 1: thumb_cpu-thumbv1 File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 29
+    Info (12022): Found design unit 1: thumb_cpu-thumbv1 File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 30
     Info (12023): Found entity 1: thumb_cpu File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+Info (12021): Found 3 design units, including 1 entities, in source file ram.vhd
     Info (12022): Found design unit 1: ram-ram_1 File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 21
+    Info (12022): Found design unit 2: ram-ram_modelsim File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 60
     Info (12023): Found entity 1: ram File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file register_d.vhd
     Info (12022): Found design unit 1: register_d-comportamental File: /home/miguelaguena/Documents/thumb/register_d.vhd Line: 17
     Info (12023): Found entity 1: register_d File: /home/miguelaguena/Documents/thumb/register_d.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
-    Info (12022): Found design unit 1: regfile-regfile_1 File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 26
+    Info (12022): Found design unit 1: regfile-regfile_1 File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 27
     Info (12023): Found entity 1: regfile File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
+Info (12021): Found 3 design units, including 1 entities, in source file rom.vhd
     Info (12022): Found design unit 1: rom-rom_1 File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 18
+    Info (12022): Found design unit 2: rom-rom_modelsim File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 52
     Info (12023): Found entity 1: rom File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 6
-Info (12127): Elaborating entity "thumb_cpu" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at thumb_cpu.vhd(25): used implicit default value for signal "data_address" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(81): used explicit default value for signal "s_number_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 81
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(82): used explicit default value for signal "s_op_sum" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 82
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(87): used explicit default value for signal "s_processor_stall" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 87
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(93): used explicit default value for signal "s_lp_reg" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 93
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(101): used explicit default value for signal "s_signal_1" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 101
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(102): used explicit default value for signal "s_signal_0" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 102
-Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(135): object "s_regWrite_wb" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 135
-Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(138): object "s_data_address" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 138
-Info (12128): Elaborating entity "alu" for hierarchy "alu:ADDER2" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 151
+Info (12127): Elaborating entity "thumb_cpu_tb" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(65): used implicit default value for signal "s_data_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 65
+Warning (10036): Verilog HDL or VHDL warning at thumb_cpu_tb.vhd(67): object "s_data_out" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 67
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(71): used explicit default value for signal "s_zero" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 71
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(72): used explicit default value for signal "s_zero_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at thumb_cpu_tb.vhd(109): signal "s_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 109
+Info (12128): Elaborating entity "thumb_cpu" for hierarchy "thumb_cpu:DUT" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 78
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(83): used explicit default value for signal "s_number_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 83
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(84): used explicit default value for signal "s_op_sum" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 84
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(89): used explicit default value for signal "s_processor_stall" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 89
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(95): used explicit default value for signal "s_lp_reg" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 95
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(103): used explicit default value for signal "s_signal_1" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 103
+Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(141): object "s_regWrite_wb" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 141
+Info (12128): Elaborating entity "alu" for hierarchy "thumb_cpu:DUT|alu:ADDER2" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 158
 Warning (10540): VHDL Signal Declaration warning at alu.vhd(36): used explicit default value for signal "zero_aux" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 36
-Info (12128): Elaborating entity "alu_1_bit" for hierarchy "alu:ADDER2|alu_1_bit:\ALUS:15:LAST:ALU_LAST" File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 43
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:REGS" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 192
-Warning (10541): VHDL Signal Declaration warning at regfile.vhd(21): used implicit default value for signal "qPC" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 21
-Info (12128): Elaborating entity "register_d" for hierarchy "register_d:REG_IF_EX" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 220
-Info (12128): Elaborating entity "register_d" for hierarchy "register_d:REG_EX_WB" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 278
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "inst_address[0]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[1]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[2]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[3]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[4]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[5]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[6]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[7]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[8]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[9]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[10]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[11]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[12]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[13]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[14]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "inst_address[15]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 24
-    Warning (13410): Pin "data_address[0]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[1]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[2]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[3]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[4]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[5]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[6]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[7]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[8]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[9]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[10]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[11]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[12]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[13]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[14]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
-    Warning (13410): Pin "data_address[15]" is stuck at GND File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 25
+Info (12128): Elaborating entity "alu_1_bit" for hierarchy "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:15:LAST:ALU_LAST" File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 43
+Info (12128): Elaborating entity "regfile" for hierarchy "thumb_cpu:DUT|regfile:REGS" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 199
+Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_IF_EX" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 226
+Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_EX_WB" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 289
+Info (12129): Elaborating entity "rom" using architecture "A:rom_modelsim" for hierarchy "rom:MEM_INST" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 92
+Info (12129): Elaborating entity "ram" using architecture "A:ram_modelsim" for hierarchy "ram:MEM_DATA" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 98
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "interrupt" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 18
-    Warning (15610): No output dependent on input pin "irq[0]" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 19
-    Warning (15610): No output dependent on input pin "irq[1]" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 19
-Info (21057): Implemented 497 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 37 input pins
-    Info (21059): Implemented 49 output pins
-    Info (21061): Implemented 411 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 49 warnings
-    Info: Peak virtual memory: 478 megabytes
-    Info: Processing ended: Thu Jul  4 15:15:10 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:29
+Info (21057): Implemented 62 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 0 input pins
+    Info (21059): Implemented 31 output pins
+    Info (21061): Implemented 31 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 932 megabytes
+    Info: Processing ended: Thu Jul 18 11:22:02 2024
+    Info: Elapsed time: 00:00:25
+    Info: Total CPU time (on all processors): 00:00:40
 
 

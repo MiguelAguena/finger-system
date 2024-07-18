@@ -1,8 +1,44 @@
-|thumb_cpu
+|thumb_cpu_tb
+counter[0] <= counter[0].DB_MAX_OUTPUT_PORT_TYPE
+counter[1] <= counter[1].DB_MAX_OUTPUT_PORT_TYPE
+counter[2] <= counter[2].DB_MAX_OUTPUT_PORT_TYPE
+counter[3] <= counter[3].DB_MAX_OUTPUT_PORT_TYPE
+counter[4] <= counter[4].DB_MAX_OUTPUT_PORT_TYPE
+counter[5] <= counter[5].DB_MAX_OUTPUT_PORT_TYPE
+counter[6] <= counter[6].DB_MAX_OUTPUT_PORT_TYPE
+counter[7] <= counter[7].DB_MAX_OUTPUT_PORT_TYPE
+counter[8] <= counter[8].DB_MAX_OUTPUT_PORT_TYPE
+counter[9] <= counter[9].DB_MAX_OUTPUT_PORT_TYPE
+counter[10] <= counter[10].DB_MAX_OUTPUT_PORT_TYPE
+counter[11] <= counter[11].DB_MAX_OUTPUT_PORT_TYPE
+counter[12] <= counter[12].DB_MAX_OUTPUT_PORT_TYPE
+counter[13] <= counter[13].DB_MAX_OUTPUT_PORT_TYPE
+counter[14] <= counter[14].DB_MAX_OUTPUT_PORT_TYPE
+counter[15] <= counter[15].DB_MAX_OUTPUT_PORT_TYPE
+counter[16] <= counter[16].DB_MAX_OUTPUT_PORT_TYPE
+counter[17] <= counter[17].DB_MAX_OUTPUT_PORT_TYPE
+counter[18] <= counter[18].DB_MAX_OUTPUT_PORT_TYPE
+counter[19] <= counter[19].DB_MAX_OUTPUT_PORT_TYPE
+counter[20] <= counter[20].DB_MAX_OUTPUT_PORT_TYPE
+counter[21] <= counter[21].DB_MAX_OUTPUT_PORT_TYPE
+counter[22] <= counter[22].DB_MAX_OUTPUT_PORT_TYPE
+counter[23] <= counter[23].DB_MAX_OUTPUT_PORT_TYPE
+counter[24] <= counter[24].DB_MAX_OUTPUT_PORT_TYPE
+counter[25] <= counter[25].DB_MAX_OUTPUT_PORT_TYPE
+counter[26] <= counter[26].DB_MAX_OUTPUT_PORT_TYPE
+counter[27] <= counter[27].DB_MAX_OUTPUT_PORT_TYPE
+counter[28] <= counter[28].DB_MAX_OUTPUT_PORT_TYPE
+counter[29] <= counter[29].DB_MAX_OUTPUT_PORT_TYPE
+counter[30] <= counter[30].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|thumb_cpu_tb|thumb_cpu:DUT
 clock => regfile:REGS.clock
 clock => register_d:REG_IF_EX.clock
 clock => register_d:REG_EX_WB.clock
+reset => s_if_ex_clear.IN1
 reset => regfile:REGS.reset
+reset => register_d:REG_EX_WB.clear
 interrupt => ~NO_FANOUT~
 irq[0] => ~NO_FANOUT~
 irq[1] => ~NO_FANOUT~
@@ -22,7 +58,7 @@ data_in[12] => s_d[12].DATAB
 data_in[13] => s_d[13].DATAB
 data_in[14] => s_d[14].DATAB
 data_in[15] => s_d[15].DATAB
-data_write <= Equal25.DB_MAX_OUTPUT_PORT_TYPE
+data_write <= Equal26.DB_MAX_OUTPUT_PORT_TYPE
 data_out[0] <= register_d:REG_EX_WB.Q[7]
 data_out[1] <= register_d:REG_EX_WB.Q[8]
 data_out[2] <= register_d:REG_EX_WB.Q[9]
@@ -42,56 +78,56 @@ data_out[15] <= register_d:REG_EX_WB.Q[22]
 inst_in[0] => s_imm_if.DATAB
 inst_in[0] => s_imm_if.DATAB
 inst_in[0] => s_imm_if.DATAB
-inst_in[0] => s_imm_if[0].DATAB
+inst_in[0] => s_if_ex_in[44].DATAB
 inst_in[1] => s_imm_if.DATAB
 inst_in[1] => s_imm_if.DATAB
 inst_in[1] => s_imm_if.DATAB
-inst_in[1] => s_imm_if[1].DATAB
+inst_in[1] => s_if_ex_in[45].DATAB
 inst_in[2] => s_imm_if.DATAB
 inst_in[2] => s_imm_if.DATAB
 inst_in[2] => s_imm_if.DATAB
-inst_in[2] => s_imm_if[2].DATAB
-inst_in[2] => s_alu_op_if[0].DATAB
+inst_in[2] => s_if_ex_in[46].DATAB
+inst_in[2] => s_if_ex_in[4].DATAB
 inst_in[3] => s_imm_if.DATAB
 inst_in[3] => s_imm_if.DATAB
 inst_in[3] => s_imm_if.DATAB
-inst_in[3] => s_imm_if[3].DATAB
-inst_in[3] => s_alu_op_if[1].DATAB
+inst_in[3] => s_if_ex_in[47].DATAB
+inst_in[3] => s_if_ex_in[5].DATAB
 inst_in[4] => s_rr1[0].DATAB
 inst_in[4] => s_imm_if.IN1
 inst_in[4] => s_imm_if.DATAB
 inst_in[4] => s_imm_if.DATAB
 inst_in[4] => s_imm_if.DATAB
-inst_in[4] => s_imm_if[4].DATAB
+inst_in[4] => s_if_ex_in[48].DATAB
 inst_in[4] => s_imm_if.IN1
 inst_in[5] => s_rr1[1].DATAB
 inst_in[5] => s_imm_if.DATAB
-inst_in[5] => s_imm_if[5].DATAB
+inst_in[5] => s_if_ex_in[49].DATAB
 inst_in[5] => s_alu_op_if.DATAB
 inst_in[6] => s_rr1[2].DATAB
 inst_in[6] => s_imm_if.DATAB
-inst_in[6] => s_imm_if[6].DATAB
+inst_in[6] => s_if_ex_in[50].DATAB
 inst_in[6] => s_alu_op_if.DATAB
 inst_in[7] => s_rr1.DATAB
 inst_in[7] => s_rr2[0].DATAB
 inst_in[7] => s_imm_if.DATAB
-inst_in[7] => s_imm_if[7].DATAB
+inst_in[7] => s_if_ex_in[51].DATAB
 inst_in[8] => s_rr1.DATAB
 inst_in[8] => s_rr2[1].DATAB
 inst_in[8] => s_imm_if.DATAB
-inst_in[8] => s_imm_if[8].DATAB
+inst_in[8] => s_if_ex_in[52].DATAB
 inst_in[9] => s_rr1.DATAB
 inst_in[9] => s_rr2[2].DATAB
 inst_in[9] => s_imm_if.IN1
 inst_in[9] => s_imm_if.DATAB
-inst_in[9] => s_imm_if[9].DATAB
+inst_in[9] => s_if_ex_in[53].DATAB
 inst_in[9] => s_imm_if.IN1
 inst_in[10] => s_rr2.DATAB
-inst_in[10] => s_wr[0].DATAB
+inst_in[10] => s_if_ex_in[0].DATAB
 inst_in[11] => s_rr2.DATAB
-inst_in[11] => s_wr[1].DATAB
+inst_in[11] => s_if_ex_in[1].DATAB
 inst_in[12] => s_rr2.DATAB
-inst_in[12] => s_wr[2].DATAB
+inst_in[12] => s_if_ex_in[2].DATAB
 inst_in[13] => Equal0.IN5
 inst_in[13] => Equal2.IN5
 inst_in[13] => Equal3.IN5
@@ -104,9 +140,8 @@ inst_in[13] => Equal11.IN5
 inst_in[13] => Equal12.IN5
 inst_in[13] => Equal13.IN5
 inst_in[13] => Equal14.IN5
-inst_in[13] => Equal15.IN5
-inst_in[13] => s_if_ex_in[60].DATAB
 inst_in[13] => Equal24.IN5
+inst_in[13] => register_d:REG_IF_EX.D[60]
 inst_in[14] => Equal0.IN4
 inst_in[14] => Equal1.IN3
 inst_in[14] => Equal2.IN4
@@ -122,9 +157,8 @@ inst_in[14] => Equal11.IN4
 inst_in[14] => Equal12.IN4
 inst_in[14] => Equal13.IN4
 inst_in[14] => Equal14.IN4
-inst_in[14] => Equal15.IN4
-inst_in[14] => s_if_ex_in[61].DATAB
 inst_in[14] => Equal24.IN4
+inst_in[14] => register_d:REG_IF_EX.D[61]
 inst_in[15] => Equal0.IN3
 inst_in[15] => Equal1.IN2
 inst_in[15] => Equal2.IN3
@@ -141,9 +175,8 @@ inst_in[15] => Equal11.IN3
 inst_in[15] => Equal12.IN3
 inst_in[15] => Equal13.IN3
 inst_in[15] => Equal14.IN3
-inst_in[15] => Equal15.IN3
-inst_in[15] => s_if_ex_in[62].DATAB
 inst_in[15] => Equal24.IN3
+inst_in[15] => register_d:REG_IF_EX.D[62]
 inst_in[15] => s_regWrite.IN1
 inst_in[15] => s_wr.IN1
 inst_address[0] <= regfile:REGS.qPC[0]
@@ -162,25 +195,25 @@ inst_address[12] <= regfile:REGS.qPC[12]
 inst_address[13] <= regfile:REGS.qPC[13]
 inst_address[14] <= regfile:REGS.qPC[14]
 inst_address[15] <= regfile:REGS.qPC[15]
-data_address[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-data_address[1] <= data_address[1].DB_MAX_OUTPUT_PORT_TYPE
-data_address[2] <= data_address[2].DB_MAX_OUTPUT_PORT_TYPE
-data_address[3] <= data_address[3].DB_MAX_OUTPUT_PORT_TYPE
-data_address[4] <= data_address[4].DB_MAX_OUTPUT_PORT_TYPE
-data_address[5] <= data_address[5].DB_MAX_OUTPUT_PORT_TYPE
-data_address[6] <= data_address[6].DB_MAX_OUTPUT_PORT_TYPE
-data_address[7] <= data_address[7].DB_MAX_OUTPUT_PORT_TYPE
-data_address[8] <= data_address[8].DB_MAX_OUTPUT_PORT_TYPE
-data_address[9] <= data_address[9].DB_MAX_OUTPUT_PORT_TYPE
-data_address[10] <= data_address[10].DB_MAX_OUTPUT_PORT_TYPE
-data_address[11] <= data_address[11].DB_MAX_OUTPUT_PORT_TYPE
-data_address[12] <= data_address[12].DB_MAX_OUTPUT_PORT_TYPE
-data_address[13] <= data_address[13].DB_MAX_OUTPUT_PORT_TYPE
-data_address[14] <= data_address[14].DB_MAX_OUTPUT_PORT_TYPE
-data_address[15] <= data_address[15].DB_MAX_OUTPUT_PORT_TYPE
+data_address[0] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[1] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[2] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[3] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[4] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[5] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[6] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[7] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[8] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[9] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[10] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[11] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[12] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[13] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[14] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
+data_address[15] <= s_data_address.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|thumb_cpu|alu:ADDER2
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2
 A[0] => alu_1_bit:ALUS:0:FIRST:ALU_FIRST.A
 A[1] => alu_1_bit:ALUS:1:MID:ALU_I.A
 A[2] => alu_1_bit:ALUS:2:MID:ALU_I.A
@@ -269,7 +302,7 @@ Ov <= alu_1_bit:ALUS:15:LAST:ALU_LAST.Ov
 Co <= alu_1_bit:ALUS:15:LAST:ALU_LAST.Co
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:15:LAST:ALU_LAST
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:15:LAST:ALU_LAST
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -292,7 +325,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -315,7 +348,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -338,7 +371,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -361,7 +394,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -384,7 +417,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -407,7 +440,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -430,7 +463,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -453,7 +486,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -476,7 +509,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -499,7 +532,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -522,7 +555,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -545,7 +578,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -568,7 +601,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -591,7 +624,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -614,7 +647,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST
+|thumb_cpu_tb|thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -637,7 +670,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|regfile:REGS
+|thumb_cpu_tb|thumb_cpu:DUT|regfile:REGS
 clock => regbank[7][0].CLK
 clock => regbank[7][1].CLK
 clock => regbank[7][2].CLK
@@ -895,7 +928,22 @@ reset => regbank.OUTPUTSELECT
 reset => regbank.OUTPUTSELECT
 reset => regbank.OUTPUTSELECT
 regWrite => register_dBank.IN1
-regWritePC => ~NO_FANOUT~
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
+regWritePC => regbank.OUTPUTSELECT
 rr1[0] => Mux0.IN2
 rr1[0] => Mux1.IN2
 rr1[0] => Mux2.IN2
@@ -1135,38 +1183,38 @@ d[15] => regbank.DATAB
 d[15] => regbank.DATAB
 d[15] => regbank.DATAB
 d[15] => regbank.DATAB
-dPC[0] => ~NO_FANOUT~
-dPC[1] => ~NO_FANOUT~
-dPC[2] => ~NO_FANOUT~
-dPC[3] => ~NO_FANOUT~
-dPC[4] => ~NO_FANOUT~
-dPC[5] => ~NO_FANOUT~
-dPC[6] => ~NO_FANOUT~
-dPC[7] => ~NO_FANOUT~
-dPC[8] => ~NO_FANOUT~
-dPC[9] => ~NO_FANOUT~
-dPC[10] => ~NO_FANOUT~
-dPC[11] => ~NO_FANOUT~
-dPC[12] => ~NO_FANOUT~
-dPC[13] => ~NO_FANOUT~
-dPC[14] => ~NO_FANOUT~
-dPC[15] => ~NO_FANOUT~
-qPC[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
-qPC[1] <= qPC[1].DB_MAX_OUTPUT_PORT_TYPE
-qPC[2] <= qPC[2].DB_MAX_OUTPUT_PORT_TYPE
-qPC[3] <= qPC[3].DB_MAX_OUTPUT_PORT_TYPE
-qPC[4] <= qPC[4].DB_MAX_OUTPUT_PORT_TYPE
-qPC[5] <= qPC[5].DB_MAX_OUTPUT_PORT_TYPE
-qPC[6] <= qPC[6].DB_MAX_OUTPUT_PORT_TYPE
-qPC[7] <= qPC[7].DB_MAX_OUTPUT_PORT_TYPE
-qPC[8] <= qPC[8].DB_MAX_OUTPUT_PORT_TYPE
-qPC[9] <= qPC[9].DB_MAX_OUTPUT_PORT_TYPE
-qPC[10] <= qPC[10].DB_MAX_OUTPUT_PORT_TYPE
-qPC[11] <= qPC[11].DB_MAX_OUTPUT_PORT_TYPE
-qPC[12] <= qPC[12].DB_MAX_OUTPUT_PORT_TYPE
-qPC[13] <= qPC[13].DB_MAX_OUTPUT_PORT_TYPE
-qPC[14] <= qPC[14].DB_MAX_OUTPUT_PORT_TYPE
-qPC[15] <= qPC[15].DB_MAX_OUTPUT_PORT_TYPE
+dPC[0] => regbank.DATAB
+dPC[1] => regbank.DATAB
+dPC[2] => regbank.DATAB
+dPC[3] => regbank.DATAB
+dPC[4] => regbank.DATAB
+dPC[5] => regbank.DATAB
+dPC[6] => regbank.DATAB
+dPC[7] => regbank.DATAB
+dPC[8] => regbank.DATAB
+dPC[9] => regbank.DATAB
+dPC[10] => regbank.DATAB
+dPC[11] => regbank.DATAB
+dPC[12] => regbank.DATAB
+dPC[13] => regbank.DATAB
+dPC[14] => regbank.DATAB
+dPC[15] => regbank.DATAB
+qPC[0] <= regbank[7][0].DB_MAX_OUTPUT_PORT_TYPE
+qPC[1] <= regbank[7][1].DB_MAX_OUTPUT_PORT_TYPE
+qPC[2] <= regbank[7][2].DB_MAX_OUTPUT_PORT_TYPE
+qPC[3] <= regbank[7][3].DB_MAX_OUTPUT_PORT_TYPE
+qPC[4] <= regbank[7][4].DB_MAX_OUTPUT_PORT_TYPE
+qPC[5] <= regbank[7][5].DB_MAX_OUTPUT_PORT_TYPE
+qPC[6] <= regbank[7][6].DB_MAX_OUTPUT_PORT_TYPE
+qPC[7] <= regbank[7][7].DB_MAX_OUTPUT_PORT_TYPE
+qPC[8] <= regbank[7][8].DB_MAX_OUTPUT_PORT_TYPE
+qPC[9] <= regbank[7][9].DB_MAX_OUTPUT_PORT_TYPE
+qPC[10] <= regbank[7][10].DB_MAX_OUTPUT_PORT_TYPE
+qPC[11] <= regbank[7][11].DB_MAX_OUTPUT_PORT_TYPE
+qPC[12] <= regbank[7][12].DB_MAX_OUTPUT_PORT_TYPE
+qPC[13] <= regbank[7][13].DB_MAX_OUTPUT_PORT_TYPE
+qPC[14] <= regbank[7][14].DB_MAX_OUTPUT_PORT_TYPE
+qPC[15] <= regbank[7][15].DB_MAX_OUTPUT_PORT_TYPE
 q1[0] <= q1.DB_MAX_OUTPUT_PORT_TYPE
 q1[1] <= q1.DB_MAX_OUTPUT_PORT_TYPE
 q1[2] <= q1.DB_MAX_OUTPUT_PORT_TYPE
@@ -1201,7 +1249,7 @@ q2[14] <= q2.DB_MAX_OUTPUT_PORT_TYPE
 q2[15] <= q2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|thumb_cpu|register_d:REG_IF_EX
+|thumb_cpu_tb|thumb_cpu:DUT|register_d:REG_IF_EX
 clock => IQ[0].CLK
 clock => IQ[1].CLK
 clock => IQ[2].CLK
@@ -1519,7 +1567,7 @@ Q[61] <= IQ[61].DB_MAX_OUTPUT_PORT_TYPE
 Q[62] <= IQ[62].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|thumb_cpu|alu:GENALU
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU
 A[0] => alu_1_bit:ALUS:0:FIRST:ALU_FIRST.A
 A[1] => alu_1_bit:ALUS:1:MID:ALU_I.A
 A[2] => alu_1_bit:ALUS:2:MID:ALU_I.A
@@ -1608,7 +1656,7 @@ Ov <= alu_1_bit:ALUS:15:LAST:ALU_LAST.Ov
 Co <= alu_1_bit:ALUS:15:LAST:ALU_LAST.Co
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:15:LAST:ALU_LAST
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:15:LAST:ALU_LAST
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1631,7 +1679,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:14:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:14:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1654,7 +1702,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:13:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:13:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1677,7 +1725,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:12:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:12:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1700,7 +1748,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:11:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:11:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1723,7 +1771,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:10:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:10:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1746,7 +1794,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:9:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:9:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1769,7 +1817,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:8:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:8:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1792,7 +1840,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:7:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:7:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1815,7 +1863,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:6:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:6:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1838,7 +1886,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:5:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:5:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1861,7 +1909,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:4:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:4:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1884,7 +1932,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:3:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:3:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1907,7 +1955,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:2:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:2:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1930,7 +1978,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:1:MID:ALU_I
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:1:MID:ALU_I
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1953,7 +2001,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|alu:GENALU|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST
+|thumb_cpu_tb|thumb_cpu:DUT|alu:GENALU|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST
 A => and_aux.IN1
 A => or_aux.IN1
 A => adder_aux.IN1
@@ -1976,7 +2024,7 @@ Op[1] => Equal1.IN0
 Op[1] => Equal2.IN1
 
 
-|thumb_cpu|register_d:REG_EX_WB
+|thumb_cpu_tb|thumb_cpu:DUT|register_d:REG_EX_WB
 clock => IQ[0].CLK
 clock => IQ[1].CLK
 clock => IQ[2].CLK
@@ -2202,5 +2250,288 @@ Q[41] <= IQ[41].DB_MAX_OUTPUT_PORT_TYPE
 Q[42] <= IQ[42].DB_MAX_OUTPUT_PORT_TYPE
 Q[43] <= IQ[43].DB_MAX_OUTPUT_PORT_TYPE
 Q[44] <= IQ[44].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|thumb_cpu_tb|rom:MEM_INST
+addr[0] => ~NO_FANOUT~
+addr[1] => Mux0.IN32782
+addr[1] => Mux1.IN32782
+addr[1] => Mux2.IN32782
+addr[1] => Mux3.IN32782
+addr[1] => Mux4.IN32782
+addr[1] => Mux5.IN32782
+addr[1] => Mux6.IN32782
+addr[1] => Mux7.IN32782
+addr[1] => Mux8.IN32782
+addr[1] => Mux9.IN32782
+addr[1] => Mux10.IN32782
+addr[1] => Mux11.IN32782
+addr[1] => Mux12.IN32782
+addr[2] => Mux0.IN32781
+addr[2] => Mux1.IN32781
+addr[2] => Mux2.IN32781
+addr[2] => Mux3.IN32781
+addr[2] => Mux4.IN32781
+addr[2] => Mux5.IN32781
+addr[2] => Mux6.IN32781
+addr[2] => Mux7.IN32781
+addr[2] => Mux8.IN32781
+addr[2] => Mux9.IN32781
+addr[2] => Mux10.IN32781
+addr[2] => Mux11.IN32781
+addr[2] => Mux12.IN32781
+addr[3] => Mux0.IN32780
+addr[3] => Mux1.IN32780
+addr[3] => Mux2.IN32780
+addr[3] => Mux3.IN32780
+addr[3] => Mux4.IN32780
+addr[3] => Mux5.IN32780
+addr[3] => Mux6.IN32780
+addr[3] => Mux7.IN32780
+addr[3] => Mux8.IN32780
+addr[3] => Mux9.IN32780
+addr[3] => Mux10.IN32780
+addr[3] => Mux11.IN32780
+addr[3] => Mux12.IN32780
+addr[4] => Mux0.IN32779
+addr[4] => Mux1.IN32779
+addr[4] => Mux2.IN32779
+addr[4] => Mux3.IN32779
+addr[4] => Mux4.IN32779
+addr[4] => Mux5.IN32779
+addr[4] => Mux6.IN32779
+addr[4] => Mux7.IN32779
+addr[4] => Mux8.IN32779
+addr[4] => Mux9.IN32779
+addr[4] => Mux10.IN32779
+addr[4] => Mux11.IN32779
+addr[4] => Mux12.IN32779
+addr[5] => Mux0.IN32778
+addr[5] => Mux1.IN32778
+addr[5] => Mux2.IN32778
+addr[5] => Mux3.IN32778
+addr[5] => Mux4.IN32778
+addr[5] => Mux5.IN32778
+addr[5] => Mux6.IN32778
+addr[5] => Mux7.IN32778
+addr[5] => Mux8.IN32778
+addr[5] => Mux9.IN32778
+addr[5] => Mux10.IN32778
+addr[5] => Mux11.IN32778
+addr[5] => Mux12.IN32778
+addr[6] => Mux0.IN32777
+addr[6] => Mux1.IN32777
+addr[6] => Mux2.IN32777
+addr[6] => Mux3.IN32777
+addr[6] => Mux4.IN32777
+addr[6] => Mux5.IN32777
+addr[6] => Mux6.IN32777
+addr[6] => Mux7.IN32777
+addr[6] => Mux8.IN32777
+addr[6] => Mux9.IN32777
+addr[6] => Mux10.IN32777
+addr[6] => Mux11.IN32777
+addr[6] => Mux12.IN32777
+addr[7] => Mux0.IN32776
+addr[7] => Mux1.IN32776
+addr[7] => Mux2.IN32776
+addr[7] => Mux3.IN32776
+addr[7] => Mux4.IN32776
+addr[7] => Mux5.IN32776
+addr[7] => Mux6.IN32776
+addr[7] => Mux7.IN32776
+addr[7] => Mux8.IN32776
+addr[7] => Mux9.IN32776
+addr[7] => Mux10.IN32776
+addr[7] => Mux11.IN32776
+addr[7] => Mux12.IN32776
+addr[8] => Mux0.IN32775
+addr[8] => Mux1.IN32775
+addr[8] => Mux2.IN32775
+addr[8] => Mux3.IN32775
+addr[8] => Mux4.IN32775
+addr[8] => Mux5.IN32775
+addr[8] => Mux6.IN32775
+addr[8] => Mux7.IN32775
+addr[8] => Mux8.IN32775
+addr[8] => Mux9.IN32775
+addr[8] => Mux10.IN32775
+addr[8] => Mux11.IN32775
+addr[8] => Mux12.IN32775
+addr[9] => Mux0.IN32774
+addr[9] => Mux1.IN32774
+addr[9] => Mux2.IN32774
+addr[9] => Mux3.IN32774
+addr[9] => Mux4.IN32774
+addr[9] => Mux5.IN32774
+addr[9] => Mux6.IN32774
+addr[9] => Mux7.IN32774
+addr[9] => Mux8.IN32774
+addr[9] => Mux9.IN32774
+addr[9] => Mux10.IN32774
+addr[9] => Mux11.IN32774
+addr[9] => Mux12.IN32774
+addr[10] => Mux0.IN32773
+addr[10] => Mux1.IN32773
+addr[10] => Mux2.IN32773
+addr[10] => Mux3.IN32773
+addr[10] => Mux4.IN32773
+addr[10] => Mux5.IN32773
+addr[10] => Mux6.IN32773
+addr[10] => Mux7.IN32773
+addr[10] => Mux8.IN32773
+addr[10] => Mux9.IN32773
+addr[10] => Mux10.IN32773
+addr[10] => Mux11.IN32773
+addr[10] => Mux12.IN32773
+addr[11] => Mux0.IN32772
+addr[11] => Mux1.IN32772
+addr[11] => Mux2.IN32772
+addr[11] => Mux3.IN32772
+addr[11] => Mux4.IN32772
+addr[11] => Mux5.IN32772
+addr[11] => Mux6.IN32772
+addr[11] => Mux7.IN32772
+addr[11] => Mux8.IN32772
+addr[11] => Mux9.IN32772
+addr[11] => Mux10.IN32772
+addr[11] => Mux11.IN32772
+addr[11] => Mux12.IN32772
+addr[12] => Mux0.IN32771
+addr[12] => Mux1.IN32771
+addr[12] => Mux2.IN32771
+addr[12] => Mux3.IN32771
+addr[12] => Mux4.IN32771
+addr[12] => Mux5.IN32771
+addr[12] => Mux6.IN32771
+addr[12] => Mux7.IN32771
+addr[12] => Mux8.IN32771
+addr[12] => Mux9.IN32771
+addr[12] => Mux10.IN32771
+addr[12] => Mux11.IN32771
+addr[12] => Mux12.IN32771
+addr[13] => Mux0.IN32770
+addr[13] => Mux1.IN32770
+addr[13] => Mux2.IN32770
+addr[13] => Mux3.IN32770
+addr[13] => Mux4.IN32770
+addr[13] => Mux5.IN32770
+addr[13] => Mux6.IN32770
+addr[13] => Mux7.IN32770
+addr[13] => Mux8.IN32770
+addr[13] => Mux9.IN32770
+addr[13] => Mux10.IN32770
+addr[13] => Mux11.IN32770
+addr[13] => Mux12.IN32770
+addr[14] => Mux0.IN32769
+addr[14] => Mux1.IN32769
+addr[14] => Mux2.IN32769
+addr[14] => Mux3.IN32769
+addr[14] => Mux4.IN32769
+addr[14] => Mux5.IN32769
+addr[14] => Mux6.IN32769
+addr[14] => Mux7.IN32769
+addr[14] => Mux8.IN32769
+addr[14] => Mux9.IN32769
+addr[14] => Mux10.IN32769
+addr[14] => Mux11.IN32769
+addr[14] => Mux12.IN32769
+addr[15] => Mux0.IN32768
+addr[15] => Mux1.IN32768
+addr[15] => Mux2.IN32768
+addr[15] => Mux3.IN32768
+addr[15] => Mux4.IN32768
+addr[15] => Mux5.IN32768
+addr[15] => Mux6.IN32768
+addr[15] => Mux7.IN32768
+addr[15] => Mux8.IN32768
+addr[15] => Mux9.IN32768
+addr[15] => Mux10.IN32768
+addr[15] => Mux11.IN32768
+addr[15] => Mux12.IN32768
+data[0] <= Mux12.DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= Mux11.DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= Mux10.DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= Mux9.DB_MAX_OUTPUT_PORT_TYPE
+data[4] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= <GND>
+data[6] <= <GND>
+data[7] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+data[8] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+data[9] <= <GND>
+data[10] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+data[11] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+data[12] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+data[13] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+data[14] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+data[15] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|thumb_cpu_tb|ram:MEM_DATA
+ck => mem.we_a.IN0
+wr => mem.we_a.IN1
+addr[0] => mem.WADDR
+addr[1] => mem.RADDR
+addr[1] => mem.WADDR1
+addr[2] => mem.RADDR1
+addr[2] => mem.WADDR2
+addr[3] => mem.RADDR2
+addr[3] => mem.WADDR3
+addr[4] => mem.RADDR3
+addr[4] => mem.WADDR4
+addr[5] => mem.RADDR4
+addr[5] => mem.WADDR5
+addr[6] => mem.RADDR5
+addr[6] => mem.WADDR6
+addr[7] => mem.RADDR6
+addr[7] => mem.WADDR7
+addr[8] => mem.RADDR7
+addr[8] => mem.WADDR8
+addr[9] => mem.RADDR8
+addr[9] => mem.WADDR9
+addr[10] => mem.RADDR9
+addr[10] => mem.WADDR10
+addr[11] => mem.RADDR10
+addr[11] => mem.WADDR11
+addr[12] => mem.RADDR11
+addr[12] => mem.WADDR12
+addr[13] => mem.RADDR12
+addr[13] => mem.WADDR13
+addr[14] => mem.RADDR13
+addr[14] => mem.WADDR14
+addr[15] => mem.RADDR14
+addr[15] => mem.WADDR15
+data_i[0] => mem.DATAIN
+data_i[1] => mem.DATAIN1
+data_i[2] => mem.DATAIN2
+data_i[3] => mem.DATAIN3
+data_i[4] => mem.DATAIN4
+data_i[5] => mem.DATAIN5
+data_i[6] => mem.DATAIN6
+data_i[7] => mem.DATAIN7
+data_i[8] => mem.DATAIN8
+data_i[9] => mem.DATAIN9
+data_i[10] => mem.DATAIN10
+data_i[11] => mem.DATAIN11
+data_i[12] => mem.DATAIN12
+data_i[13] => mem.DATAIN13
+data_i[14] => mem.DATAIN14
+data_i[15] => mem.DATAIN15
+data_o[0] <= mem.DATAOUT
+data_o[1] <= mem.DATAOUT1
+data_o[2] <= mem.DATAOUT2
+data_o[3] <= mem.DATAOUT3
+data_o[4] <= mem.DATAOUT4
+data_o[5] <= mem.DATAOUT5
+data_o[6] <= mem.DATAOUT6
+data_o[7] <= mem.DATAOUT7
+data_o[8] <= mem.DATAOUT8
+data_o[9] <= mem.DATAOUT9
+data_o[10] <= mem.DATAOUT10
+data_o[11] <= mem.DATAOUT11
+data_o[12] <= mem.DATAOUT12
+data_o[13] <= mem.DATAOUT13
+data_o[14] <= mem.DATAOUT14
+data_o[15] <= mem.DATAOUT15
 
 

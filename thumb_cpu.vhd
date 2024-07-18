@@ -9,7 +9,8 @@ entity thumb_cpu is
 	generic (
 	   reg_n: natural := 8;
 		word_size : natural := 16;
-		irq_size : natural := 2
+		irq_size : natural := 2;
+		PC_reset: std_logic_vector(15 downto 0) := "1111111111111110"
 	);
 	
 	port (
@@ -46,7 +47,8 @@ architecture thumbv1 of thumb_cpu is
 	component regfile is
 		 generic (
 			  reg_n: natural := 8;
-			  word_s: natural := 16
+			  word_s: natural := 16;
+			  PC_reset: std_logic_vector(15 downto 0) := "1111111111111110"
 		 );
 
 		 port (
@@ -103,11 +105,11 @@ architecture thumbv1 of thumb_cpu is
 	
 	signal s_if_ex_in : std_logic_vector(62 downto 0) := (others => '0');
 	signal s_if_ex_out : std_logic_vector(62 downto 0) := (others => '0');
-	signal s_if_ex_nop : std_logic := '0';
+	signal s_if_ex_clear : std_logic := '0';
 	
 	signal s_ex_wb_in : std_logic_vector(44 downto 0) := (others => '0');
 	signal s_ex_wb_out : std_logic_vector(44 downto 0) := (others => '0');
-	signal s_ex_wb_nop : std_logic := '0';
+	signal s_ex_wb_clear : std_logic := '0';
 	
 	signal s_sel_ex : std_logic_vector(2 downto 0);
 	signal s_imm_ex : std_logic_vector(word_size-1 downto 0);
@@ -125,6 +127,8 @@ architecture thumbv1 of thumb_cpu is
 	signal s_alu_b_before_fwd : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_alu_res_ex : std_logic_vector(word_size-1 downto 0);
 	signal s_zero_ex : std_logic;
+	signal s_negative_ex : std_logic;
+	signal s_overflow_ex : std_logic;
 	signal s_jump_ex : std_logic := '0';
 	
 	signal s_sel_wb : std_logic_vector(2 downto 0);
@@ -135,7 +139,7 @@ architecture thumbv1 of thumb_cpu is
 	signal s_regWrite_wb : std_logic;
 	signal s_wr_wb : std_logic_vector(natural(ceil(log2(real(reg_n)))) -1 downto 0) := (others => '0');
 	
-	signal s_data_address : std_logic_vector(word_size-1 downto 0);
+	signal s_data_address : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_data_in : std_logic_vector(word_size-1 downto 0);
 	signal s_data_out : std_logic_vector(word_size-1 downto 0);
 	
@@ -145,6 +149,7 @@ architecture thumbv1 of thumb_cpu is
 begin
 	--FETCH
 	inst_address <= s_inst_address;
+	data_address <= s_data_address;
 	s_inst_in <= inst_in;
 	s_sel_if <= s_inst_in(15 downto 13);
 	
@@ -160,7 +165,7 @@ begin
 	);
 	
 	s_regWritePC <= NOT(s_processor_stall);
-	s_regWrite <= '1' when (s_sel_if(2) = '0' or s_sel_if = "110" or s_sel_if(2 downto 1) = "10") else
+	s_regWrite <= '1' when (s_sel_if /= "000" and s_sel_if /= "111") else
 					  '0';
 	
 	s_rr1 <= s_inst_in(6 downto 4) when s_sel_if = "001" else
@@ -192,7 +197,8 @@ begin
 	REGS: regfile
 	generic map (
 		reg_n => reg_n,
-		word_s => word_size
+		word_s => word_size,
+		PC_reset => PC_reset
 	)
 	
 	port map (
@@ -210,13 +216,11 @@ begin
 		q2 => s_q2_if
 	);
 	
-	s_if_ex_nop <= '1' when (s_sel_if = "000" or s_jump_ex = '1') else
-						'0';
+	s_if_ex_clear <= s_jump_ex OR reset;
 	
 	--            3          16         16        3       16        3       2             1            3
-	s_if_ex_in <= s_sel_if & s_imm_if & s_q1_if & s_rr1 & s_q2_if & s_rr2 & s_alu_op_if & s_regWrite & s_wr when (s_if_ex_nop = '0') else
-					  (others => '0');
-					  
+	s_if_ex_in <= s_sel_if & s_imm_if & s_q1_if & s_rr1 & s_q2_if & s_rr2 & s_alu_op_if & s_regWrite & s_wr;
+
 	REG_IF_EX: register_d
 	generic map (
 		N => 63
@@ -224,7 +228,7 @@ begin
 	port map (
       clock => clock,
       enable => s_signal_1,
-		clear => s_signal_0,
+      clear => s_if_ex_clear,
       D => s_if_ex_in,
       Q => s_if_ex_out
 	);
@@ -241,16 +245,14 @@ begin
 	
 	s_alu_a_before_fwd <= s_q1_ex;
 	
-	s_alu_a <= s_alu_res_wb when (s_rr1_ex = s_rr1_wb) else
-				  s_alu_b_wb when (s_rr1_ex = s_rr2_wb) else
+	s_alu_a <= s_alu_res_wb when (s_rr1_ex = s_wr_wb and s_rr1_ex /= "000") else
 				  s_alu_a_before_fwd;
 	
 	s_alu_b_before_fwd <= s_q2_ex when (s_sel_ex = "001" or s_sel_ex(2 downto 1) = "10") else
 								 s_imm_ex when (s_sel_ex(2 downto 1) = "01") else
 								 (others => '0');
 				  
-	s_alu_b <= s_alu_b_wb when (s_rr2_ex = s_rr2_wb) else
-				  s_alu_res_wb when (s_rr2_ex = s_rr1_wb) else
+	s_alu_b <= s_alu_res_wb when (s_rr2_ex = s_wr_wb and s_rr2_ex /= "000") else
 				  s_alu_b_before_fwd;
 	
 	GENALU: alu
@@ -262,18 +264,19 @@ begin
 		B => s_alu_b,
 		F => s_alu_res_ex,
 		S => s_alu_op_ex,
-		Z => s_zero_ex
+		Z => s_zero_ex,
+		N => s_negative_ex,
+		Ov => s_overflow_ex
 	);
 	
-	s_jump_ex <= '1' when (s_sel_ex(2 downto 1) = "10" and s_zero_ex = '1') else
+	s_jump_ex <= '1' when ((s_sel_ex = "100" and s_zero_ex = '1') or
+						   (s_sel_ex = "101" and (s_negative_ex /= s_overflow_ex))) else
 	'0';
 	
-	s_ex_wb_nop <= '1' when (s_sel_if = "000" or s_jump_ex = '1') else
-						'0';
-	
 	--            3          16             3          16        3          1               3
-	s_ex_wb_in <= s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b & s_rr2_ex & s_regWrite_ex & s_wr_ex when (s_ex_wb_nop = '0') else
-					  (others => '0');
+	s_ex_wb_in <= s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b & s_rr2_ex & s_regWrite_ex & s_wr_ex;
+	
+	s_ex_wb_clear <= reset;
 	
 	REG_EX_WB: register_d
 	generic map (
@@ -282,7 +285,7 @@ begin
 	port map (
       clock => clock,
       enable => s_signal_1,
-		clear => s_signal_0,
+		clear => s_ex_wb_clear,
       D => s_ex_wb_in,
       Q => s_ex_wb_out
 	);

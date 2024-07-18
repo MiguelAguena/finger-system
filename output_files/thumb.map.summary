@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Jul  4 15:15:10 2024
+Analysis & Synthesis Status : Successful - Thu Jul 18 11:22:02 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : thumb
-Top-level Entity Name : thumb_cpu
+Top-level Entity Name : thumb_cpu_tb
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 197
-Total pins : 86
+Total registers : 0
+Total pins : 31
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
