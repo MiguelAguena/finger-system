@@ -1,4 +1,13 @@
-/home/miguelaguena/Documents/thumb/regfile.vhd {2 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/regfile.vhd
+/home/miguelaguena/Documents/thumb/rom.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/rom.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity rom
+-- Compiling architecture rom_1 of rom
+
+} {} {}} /home/miguelaguena/Documents/thumb/regfile.vhd {2 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/regfile.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -18,17 +27,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity alu
 -- Compiling architecture alu_1 of alu
 
-} {} {}} /home/miguelaguena/Documents/thumb/rom.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/rom.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity rom
--- Compiling architecture rom_1 of rom
--- Compiling architecture rom_modelsim of rom
--- Loading entity rom
-
 } {} {}} /home/miguelaguena/Documents/thumb/thumb_cpu.vhd {2 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/thumb_cpu.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
@@ -42,6 +40,15 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling architecture thumbv1 of thumb_cpu
 ** Warning: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd(83): (vcom-1074) Non-locally static OTHERS choice is allowed only if it is the only choice of the only association.
 
+} {} {}} /home/miguelaguena/Documents/thumb/ram.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/ram.vhd
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity ram
+-- Compiling architecture ram_1 of ram
+
 } {} {}} /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
@@ -50,8 +57,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package NUMERIC_STD
 -- Compiling entity thumb_cpu_tb
 -- Compiling architecture arch of thumb_cpu_tb
--- Loading entity rom
--- Loading entity ram
 
 } {} {}} /home/miguelaguena/Documents/thumb/alu_1_bit.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/alu_1_bit.vhd
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
@@ -69,16 +74,5 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package std_logic_1164
 -- Compiling entity register_d
 -- Compiling architecture comportamental of register_d
-
-} {} {}} /home/miguelaguena/Documents/thumb/ram.vhd {1 {vcom -work work -2008 -explicit -vopt -stats=none /home/miguelaguena/Documents/thumb/ram.vhd
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity ram
--- Compiling architecture ram_1 of ram
--- Compiling architecture ram_modelsim of ram
--- Loading entity ram
 
 } {} {}}

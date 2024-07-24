@@ -16,6 +16,22 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -23,406 +39,407 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/miguelaguena/Documents/oac2-tfive/modelsim
+Z1 d/home/miguelaguena/Documents/oac2-tfive/modelsim
 T_opt
-!s110 1721313757
-V:>2EgzY<1_ghQi1]Uejn:0
+!s110 1721851406
+ViH^A=Y?AXU=IVH=QK4hW42
 04 12 4 work thumb_cpu_tb arch 1
-=13-000ae431a4f1-669929dd-27eaa-a1ea
+=16-000ae431a4f1-66a15e0d-b4ca2-663b
 !s124 OEM10U41 
 o-quiet -auto_acc_if_foreign -work work
 tCvgOpt 0
 n@_opt
 OL;O;2021.2;73
+R1
 Ealu
-Z1 w1720114538
-Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
-Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 232
-Z5 d/home/miguelaguena/Documents/thumb/modelsim
-Z6 8/home/miguelaguena/Documents/thumb/alu.vhd
-Z7 F/home/miguelaguena/Documents/thumb/alu.vhd
+Z2 w1720114538
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 504
+Z6 d/home/miguelaguena/Documents/thumb/modelsim
+Z7 8/home/miguelaguena/Documents/thumb/alu.vhd
+Z8 F/home/miguelaguena/Documents/thumb/alu.vhd
 l0
 L5 1
 V^ga1VKf8@MMCNJK03PBNf0
 !s100 GW^7MXVg[Vf>:@=<LkDiA2
-Z8 OL;C;2021.2;73
+Z9 OL;C;2021.2;73
 33
-Z9 !s110 1721313749
+Z10 !s110 1721852041
 !i10b 1
-Z10 !s108 1721313749.000000
-Z11 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/alu.vhd|
-Z12 !s107 /home/miguelaguena/Documents/thumb/alu.vhd|
+Z11 !s108 1721852041.000000
+Z12 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/alu.vhd|
+Z13 !s107 /home/miguelaguena/Documents/thumb/alu.vhd|
 !i113 0
-Z13 o-work work -2008 -explicit
-Z14 tExplicit 1 NoCoverage 1 CvgOpt 0
+Z14 o-work work -2008 -explicit
+Z15 tExplicit 1 NoCoverage 1 CvgOpt 0
 Aalu_1
-R2
 R3
 R4
+R5
 DEx4 work 3 alu 0 22 ^ga1VKf8@MMCNJK03PBNf0
-!i122 232
+!i122 504
 l37
 L21 65
 V;Sc9dhYo_]V_VgG4_:zM?0
 !s100 [DlMkmJDW=bX[@1eATc7C0
-R8
-33
 R9
-!i10b 1
+33
 R10
+!i10b 1
 R11
 R12
-!i113 0
 R13
+!i113 0
 R14
+R15
 Ealu_1_bit
-Z15 w1719533524
-R2
+Z16 w1719533524
 R3
 R4
-!i122 233
 R5
-Z16 8/home/miguelaguena/Documents/thumb/alu_1_bit.vhd
-Z17 F/home/miguelaguena/Documents/thumb/alu_1_bit.vhd
+!i122 505
+R6
+Z17 8/home/miguelaguena/Documents/thumb/alu_1_bit.vhd
+Z18 F/home/miguelaguena/Documents/thumb/alu_1_bit.vhd
 l0
 L5 1
 VJ6AHim1o;Rf^N_d82JXhB2
 !s100 3AjBz;kn:lna;DiWn>1W81
-R8
-33
 R9
-!i10b 1
+33
 R10
-Z18 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/alu_1_bit.vhd|
-Z19 !s107 /home/miguelaguena/Documents/thumb/alu_1_bit.vhd|
+!i10b 1
+R11
+Z19 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/alu_1_bit.vhd|
+Z20 !s107 /home/miguelaguena/Documents/thumb/alu_1_bit.vhd|
 !i113 0
-R13
 R14
+R15
 Aalu_1_bit_1
-R2
 R3
 R4
+R5
 DEx4 work 9 alu_1_bit 0 22 J6AHim1o;Rf^N_d82JXhB2
-!i122 233
+!i122 505
 l22
 L16 27
 VbiLeCTkVz=Mo4AG]KkCg_1
 !s100 HelRfY3FCnWJi3NSnUc^D0
-R8
-33
 R9
-!i10b 1
+33
 R10
-R18
+!i10b 1
+R11
 R19
+R20
 !i113 0
-R13
 R14
+R15
 Eram
-Z20 w1721245440
-R2
+Z21 w1721842222
 R3
 R4
-!i122 234
 R5
-Z21 8/home/miguelaguena/Documents/thumb/ram.vhd
-Z22 F/home/miguelaguena/Documents/thumb/ram.vhd
+!i122 506
+R6
+Z22 8/home/miguelaguena/Documents/thumb/ram.vhd
+Z23 F/home/miguelaguena/Documents/thumb/ram.vhd
 l0
 L6 1
-VBd^7@E5j^N5=V3RV8T1BO2
-!s100 BZ[9z<6NP0b3UQ_D0A1Oi0
-R8
-33
+VFE7H5H3M==oCa2HAQO:Q53
+!s100 :@mOQZDz:W3YjkR9;X8[61
 R9
-!i10b 1
+33
 R10
-Z23 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/ram.vhd|
-Z24 !s107 /home/miguelaguena/Documents/thumb/ram.vhd|
+!i10b 1
+R11
+Z24 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/ram.vhd|
+Z25 !s107 /home/miguelaguena/Documents/thumb/ram.vhd|
 !i113 0
-R13
 R14
-Aram_modelsim
-R2
+R15
+Aram_1
 R3
 R4
-Z25 DEx4 work 3 ram 0 22 Bd^7@E5j^N5=V3RV8T1BO2
-!i122 234
+R5
+DEx4 work 3 ram 0 22 FE7H5H3M==oCa2HAQO:Q53
+!i122 506
+l50
+L21 39
+VOT`UB<NUjOnR[zQGCfgfc1
+!s100 2b]omXc[LPc;l[Sc?AA?e3
+R9
+33
+R10
+!i10b 1
+R11
+R24
+R25
+!i113 0
+R14
+R15
+Aram_modelsim
+R3
+R4
+R5
+DEx4 work 3 ram 0 22 Bd^7@E5j^N5=V3RV8T1BO2
+!i122 242
 l63
 L60 13
 VYQeXh7a5;:14^zGkl0^@;1
 !s100 WBBHd4LiP4T[P8^iOR^Od0
-R8
-33
 R9
+33
+Z26 !s110 1721840527
 !i10b 1
-R10
-R23
+!s108 1721840526.000000
 R24
-!i113 0
-R13
-R14
-Aram_1
-R2
-R3
-R4
 R25
-!i122 234
-l49
-L21 38
-V]HXzRJlQPV:lkHa77GWgA3
-!s100 L>OmL0NYkMdNJ?Bh7aNg>3
-R8
-33
-R9
-!i10b 1
-R10
-R23
-R24
 !i113 0
-R13
 R14
+R15
+w1721245440
 Eregfile
-Z26 w1721312402
-Z27 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
-R2
+Z27 w1721312402
+Z28 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
 R3
 R4
-!i122 235
 R5
-Z28 8/home/miguelaguena/Documents/thumb/regfile.vhd
-Z29 F/home/miguelaguena/Documents/thumb/regfile.vhd
+!i122 507
+R6
+Z29 8/home/miguelaguena/Documents/thumb/regfile.vhd
+Z30 F/home/miguelaguena/Documents/thumb/regfile.vhd
 l0
 L6 1
 Vi;jGJ[oD2=@NVoHkP@PH01
 !s100 EhL0ANJDH9KkG_ZhbZd9c0
-R8
-33
 R9
-!i10b 1
+33
 R10
-Z30 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/regfile.vhd|
-Z31 !s107 /home/miguelaguena/Documents/thumb/regfile.vhd|
+!i10b 1
+R11
+Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/regfile.vhd|
+Z32 !s107 /home/miguelaguena/Documents/thumb/regfile.vhd|
 !i113 0
-R13
 R14
+R15
 Aregfile_1
-R27
-R2
+R28
 R3
 R4
+R5
 DEx4 work 7 regfile 0 22 i;jGJ[oD2=@NVoHkP@PH01
-!i122 235
+!i122 507
 l32
 L27 29
 VZANki8JU_ngken0HZQ3E@3
 !s100 ?TjG`4`fjc9Z_W7ihc7aF0
-R8
-33
 R9
-!i10b 1
+33
 R10
-R30
+!i10b 1
+R11
 R31
+R32
 !i113 0
-R13
 R14
+R15
 Eregister_d
-Z32 w1719413585
-R3
+Z33 w1719413585
 R4
-!i122 236
 R5
-Z33 8/home/miguelaguena/Documents/thumb/register_d.vhd
-Z34 F/home/miguelaguena/Documents/thumb/register_d.vhd
+!i122 508
+R6
+Z34 8/home/miguelaguena/Documents/thumb/register_d.vhd
+Z35 F/home/miguelaguena/Documents/thumb/register_d.vhd
 l0
 L4 1
 V`=lY6Zg:FEi2IDB=YS;;V3
 !s100 <g?bcehYHU`BNdzG?n<G@2
-R8
-33
 R9
-!i10b 1
+33
 R10
-Z35 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/register_d.vhd|
-Z36 !s107 /home/miguelaguena/Documents/thumb/register_d.vhd|
+!i10b 1
+R11
+Z36 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/register_d.vhd|
+Z37 !s107 /home/miguelaguena/Documents/thumb/register_d.vhd|
 !i113 0
-R13
 R14
+R15
 Acomportamental
-R3
 R4
+R5
 DEx4 work 10 register_d 0 22 `=lY6Zg:FEi2IDB=YS;;V3
-!i122 236
+!i122 508
 l19
 L17 19
 VVC2:h?lJ?6cdKMQBBBFAY3
 !s100 jS;^5;g=g03OHo]gZ8LnQ1
-R8
-33
 R9
-!i10b 1
+33
 R10
-R35
+!i10b 1
+R11
 R36
+R37
 !i113 0
-R13
 R14
+R15
 Erom
-Z37 w1721245431
-R2
+Z38 w1721842199
 R3
 R4
-!i122 237
 R5
-Z38 8/home/miguelaguena/Documents/thumb/rom.vhd
-Z39 F/home/miguelaguena/Documents/thumb/rom.vhd
+!i122 509
+R6
+Z39 8/home/miguelaguena/Documents/thumb/rom.vhd
+Z40 F/home/miguelaguena/Documents/thumb/rom.vhd
 l0
 L6 1
-V^KLDC4g8V:Xf<f>D;Li_b3
-!s100 3?NDWhBik5KQ25Lo_J33d3
-R8
-33
+VQzDIoF1Hi4fji4mhLDgek3
+!s100 _PIW3fzhRZ:B10MoeWmj=3
 R9
-!i10b 1
+33
 R10
-Z40 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/rom.vhd|
-Z41 !s107 /home/miguelaguena/Documents/thumb/rom.vhd|
+!i10b 1
+R11
+Z41 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/rom.vhd|
+Z42 !s107 /home/miguelaguena/Documents/thumb/rom.vhd|
 !i113 0
-R13
 R14
-Arom_modelsim
-R2
+R15
+Arom_1
 R3
 R4
-Z42 DEx4 work 3 rom 0 22 ^KLDC4g8V:Xf<f>D;Li_b3
-!i122 237
+R5
+DEx4 work 3 rom 0 22 QzDIoF1Hi4fji4mhLDgek3
+!i122 509
+l48
+L18 34
+VZS]KW^jeBgZLL`F2L0LPP0
+!s100 C383oBWb36a;?P3>3KfTe2
+R9
+33
+R10
+!i10b 1
+R11
+R41
+R42
+!i113 0
+R14
+R15
+Arom_modelsim
+R3
+R4
+R5
+DEx4 work 3 rom 0 22 ^KLDC4g8V:Xf<f>D;Li_b3
+!i122 245
 l57
 L52 34
 VZmhN^4n@D[NT`fG>jOUC11
 !s100 Wb97Ko>gRB:Tg8ZZg2e3W3
-R8
-33
 R9
+33
+R26
 !i10b 1
-R10
-R40
+!s108 1721840527.000000
 R41
-!i113 0
-R13
-R14
-Arom_1
-R2
-R3
-R4
 R42
-!i122 237
-l47
-L18 33
-V3M_j^N8UXH0n?6]N>gzh?0
-!s100 Hj3a[Bz1BT29al9OCWh1F0
-R8
-33
-R9
-!i10b 1
-R10
-R40
-R41
 !i113 0
-R13
 R14
+R15
+w1721245431
 Ethumb_cpu
-Z43 w1721313741
-R27
-R2
+Z43 w1721851337
+R28
+R3
 Z44 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
 Z45 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-R3
 R4
-!i122 238
 R5
+!i122 510
+R6
 Z46 8/home/miguelaguena/Documents/thumb/thumb_cpu.vhd
 Z47 F/home/miguelaguena/Documents/thumb/thumb_cpu.vhd
 l0
 L8 1
 V1;5Xh]O0XzG_]SKlh0R^R3
 !s100 :5o2WYfJKVP;ezLQ3^l;z2
-R8
-33
 R9
-!i10b 1
+33
 R10
+!i10b 1
+R11
 Z48 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/thumb_cpu.vhd|
 Z49 !s107 /home/miguelaguena/Documents/thumb/thumb_cpu.vhd|
 !i113 0
-R13
 R14
+R15
 Athumbv1
-R27
-R2
+R28
+R3
 R44
 R45
-R3
 R4
+R5
 DEx4 work 9 thumb_cpu 0 22 1;5Xh]O0XzG_]SKlh0R^R3
-!i122 238
-l149
-L30 285
-VmJ;_VO;Yz]<6G:gK=@VhF0
-!s100 4O3_<f:GF`TALj40Yb;LW2
-R8
-33
+!i122 510
+l156
+L30 305
+V0[3h_hF=l809d^M4n0Pio2
+!s100 QaH?@QTkS`VT2nJ3KN8_f2
 R9
-!i10b 1
+33
 R10
+!i10b 1
+R11
 R48
 R49
 !i113 0
-R13
 R14
+R15
 Ethumb_cpu_tb
-Z50 w1721312492
-R2
+Z50 w1721842035
 R3
 R4
-!i122 239
 R5
+!i122 511
+R6
 Z51 8/home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd
 Z52 F/home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd
 l0
 L5 1
 VnAKe0VaIG[9^OEFze@@F_2
 !s100 LjOQaJ[PRT`=Z?h?hR>CK0
-R8
-33
 R9
-!i10b 1
+33
 R10
+!i10b 1
+R11
 Z53 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|/home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd|
 Z54 !s107 /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd|
 !i113 0
-R13
 R14
+R15
 Aarch
-R25
-R42
-R2
 R3
 R4
-DEx4 work 12 thumb_cpu_tb 0 22 nAKe0VaIG[9^OEFze@@F_2
-!i122 239
+R5
+Z55 DEx4 work 12 thumb_cpu_tb 0 22 nAKe0VaIG[9^OEFze@@F_2
+!i122 511
 l75
-L11 103
-VeY_h>@V6D9LnB3LhXWlNo0
-!s100 06C2E8JXWi?G7g9o<9MIm0
-R8
-33
+Z56 L11 105
+Z57 VBUz51h>?C?__;bTgdX@b62
+Z58 !s100 AW[ThXzm30BOV;gdD69[31
 R9
-!i10b 1
+33
 R10
+!i10b 1
+R11
 R53
 R54
 !i113 0
-R13
 R14
+R15

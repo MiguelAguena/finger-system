@@ -1,12 +1,12 @@
-###ThumbV1 CPU
-ThumbV1 CPU is a minimalistic 16-bit RISC processor architecture with a three-staged single issue pipeline.
+###FingerV1 CPU
+FingerV1 CPU is a minimalistic 16-bit RISC processor architecture with a three-staged single issue pipeline.
 Since it is designed to be as simple as possible, the CPU has only one mode of operation (and no protected modes), and has no architectural restrictions to any behavior whatsoever.
 
 ###Pipeline
 The ThumbV1 design has a single issue pipeline with three stages: Fetch, Execute and Writeback.
 
 ###Registers
-ThumbV1 has eight registers in total, five of which (R0 to R4) are general purpose registers.
+ThumbV1 has eight registers in total, five of which (R0 to R5) are general purpose registers.
 
 Though the architecture has no behavioral restrictions, it is EXCEEDINGLY recommended NOT TO USE R6 and R7 for general use, because they are NOT INTENDED as such:
 From a software point of view, these registers may have the following purposes:

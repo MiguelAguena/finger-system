@@ -7,7 +7,7 @@ entity ram is
     generic (
         addr_s : natural := 16;
         word_s : natural := 16;
-        init_f : string  := "ram.dat"
+        init_f : string  := "ram.txt"
     );
     port (
         ck     : in  std_logic;
@@ -29,37 +29,24 @@ architecture ram_1 of ram is
         variable temp_mem : memory_type;
     begin
         for i in memory_type'range loop
+            exit when endfile(mif_file);
             readline(mif_file, mif_line);
-            read(mif_line, current_char);
 				
-				for j in 0 to word_s-1 loop
-					if current_char = '1' then
-						current_word(word_s - 1 - j) := '1';
-					else
-						current_word(word_s - 1 - j) := '0';
-					end if;
-				end loop;
+            for j in 0 to word_s-1 loop
+                read(mif_line, current_char);
+				if current_char = '1' then
+					current_word(word_s - 1 - j) := '1';
+				else
+					current_word(word_s - 1 - j) := '0';
+				end if;
+			end loop;
 				
-				temp_mem(i) := current_word;
+			temp_mem(i) := current_word;
         end loop;
         return temp_mem;
     end function;
 
     signal mem : memory_type := init_mem(init_f);
-begin
-    p0: process (ck, wr, data_i, addr) is
-    begin
-        if(ck = '1' AND wr = '1') then
-            mem(to_integer(unsigned(addr))) <= data_i;
-        end if;
-    end process p0;
-
-    data_o <= mem(to_integer(unsigned(addr(addr_s-1 downto 1))));
-end architecture;
-
-architecture ram_modelsim of ram is
-    type memory_type is array (0 to (2 ** addr_s) - 1) of std_logic_vector(word_s-1 downto 0);
-    signal mem : memory_type := (others => (others => '0'));
 begin
     p0: process (ck, wr, data_i, addr) is
     begin

@@ -25,6 +25,6 @@ Load -- REGD = [REG1]
 SEL-REGD-REG1-(unused)
 110-xxx -xxx -xxxxxxx
 
-Store -- [REGM] = REG1
+Store -- [REG1] = REGM
 SEL-REGM-REG1-(unused)
 111-xxx -xxx -xxxxxxx

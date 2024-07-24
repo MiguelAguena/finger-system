@@ -98,19 +98,23 @@ architecture thumbv1 of thumb_cpu is
 	signal s_imm_if : std_logic_vector(word_size-1 downto 0);
 	signal s_q1_if : std_logic_vector(word_size-1 downto 0);
 	signal s_q2_if : std_logic_vector(word_size-1 downto 0);
+	signal s_q1_before_fwd : std_logic_vector(word_size-1 downto 0);
+	signal s_q2_before_fwd : std_logic_vector(word_size-1 downto 0);
 	signal s_alu_op_if : std_logic_vector(1 downto 0);
 	
 	signal s_signal_1 : std_logic := '1';
 	signal s_signal_0 : std_logic := '0';
 	
-	signal s_if_ex_in : std_logic_vector(62 downto 0) := (others => '0');
-	signal s_if_ex_out : std_logic_vector(62 downto 0) := (others => '0');
+	signal s_if_ex_in : std_logic_vector(78 downto 0) := (others => '0');
+	signal s_if_ex_out : std_logic_vector(78 downto 0) := (others => '0');
 	signal s_if_ex_clear : std_logic := '0';
 	
-	signal s_ex_wb_in : std_logic_vector(44 downto 0) := (others => '0');
-	signal s_ex_wb_out : std_logic_vector(44 downto 0) := (others => '0');
+	signal s_ex_wb_in : std_logic_vector(60 downto 0) := (others => '0');
+	signal s_ex_wb_out : std_logic_vector(60 downto 0) := (others => '0');
 	signal s_ex_wb_clear : std_logic := '0';
 	
+	signal s_inst_address_ex : std_logic_vector(word_size-1 downto 0) := (others => '0');
+
 	signal s_sel_ex : std_logic_vector(2 downto 0);
 	signal s_imm_ex : std_logic_vector(word_size-1 downto 0);
 	signal s_q1_ex : std_logic_vector(word_size-1 downto 0);
@@ -119,6 +123,7 @@ architecture thumbv1 of thumb_cpu is
 	signal s_rr2_ex : std_logic_vector(2 downto 0);
 	signal s_alu_op_ex : std_logic_vector(1 downto 0);
 	signal s_regWrite_ex : std_logic;
+	signal s_regWrite_ex_after_branch : std_logic;
 	signal s_wr_ex : std_logic_vector(natural(ceil(log2(real(reg_n)))) -1 downto 0) := (others => '0');
 	
 	signal s_alu_a : std_logic_vector(word_size-1 downto 0) := (others => '0');
@@ -131,6 +136,8 @@ architecture thumbv1 of thumb_cpu is
 	signal s_overflow_ex : std_logic;
 	signal s_jump_ex : std_logic := '0';
 	
+	signal s_inst_address_wb : std_logic_vector(word_size-1 downto 0) := (others => '0');
+
 	signal s_sel_wb : std_logic_vector(2 downto 0);
 	signal s_alu_res_wb : std_logic_vector(word_size-1 downto 0);
 	signal s_rr1_wb : std_logic_vector(2 downto 0);
@@ -190,7 +197,7 @@ begin
 						(others => '0');
 	
 	s_pc_input <= s_pc_plus_2 when (s_jump_ex = '0') else
-					  s_alu_res_ex;
+				  s_alu_b_before_fwd;
 
 	s_d <= s_res_to_write;
 	
@@ -204,7 +211,7 @@ begin
 	port map (
 		clock => clock,
 		reset => reset,
-		regWrite => s_regWrite,
+		regWrite => s_regWrite_wb,
 		regWritePC => s_regWritePC,
 		rr1 => s_rr1,
 		rr2 => s_rr2,
@@ -212,18 +219,24 @@ begin
 		d => s_d,
 		dPC => s_pc_input,
 		qPC => s_inst_address,
-		q1 => s_q1_if,
-		q2 => s_q2_if
+		q1 => s_q1_before_fwd,
+		q2 => s_q2_before_fwd
 	);
+
+	s_q1_if <= s_res_to_write when (s_rr1 = s_wr_wb and s_rr1 /= "000") else
+			   s_q1_before_fwd;
+
+	s_q2_if <= s_res_to_write when (s_rr2 = s_wr_wb and s_rr2 /= "000") else
+			   s_q2_before_fwd;
 	
 	s_if_ex_clear <= s_jump_ex OR reset;
 	
-	--            3          16         16        3       16        3       2             1            3
-	s_if_ex_in <= s_sel_if & s_imm_if & s_q1_if & s_rr1 & s_q2_if & s_rr2 & s_alu_op_if & s_regWrite & s_wr;
+	--            16			   3          16         16        3       16        3       2             1            3
+	s_if_ex_in <= s_inst_address & s_sel_if & s_imm_if & s_q1_if & s_rr1 & s_q2_if & s_rr2 & s_alu_op_if & s_regWrite & s_wr;
 
 	REG_IF_EX: register_d
 	generic map (
-		N => 63
+		N => 79
 	)
 	port map (
       clock => clock,
@@ -233,6 +246,7 @@ begin
       Q => s_if_ex_out
 	);
 	
+	s_inst_address_ex <= s_if_ex_out(78 downto 63); 
 	s_sel_ex <= s_if_ex_out(62 downto 60);
 	s_imm_ex <= s_if_ex_out(59 downto 44);
 	s_q1_ex <= s_if_ex_out(43 downto 28);
@@ -243,18 +257,19 @@ begin
 	s_regWrite_ex <= s_if_ex_out(3);
 	s_wr_ex <= s_if_ex_out(2 downto 0);
 	
-	s_alu_a_before_fwd <= s_q1_ex;
-	
-	s_alu_a <= s_alu_res_wb when (s_rr1_ex = s_wr_wb and s_rr1_ex /= "000") else
+	s_alu_a <= s_res_to_write when (s_rr1_ex = s_wr_wb and s_rr1_ex /= "000") else
 				  s_alu_a_before_fwd;
 	
+	s_alu_b <= s_res_to_write when (s_rr2_ex = s_wr_wb and s_rr2_ex /= "000") else
+			   (others => '0') when ((s_sel_ex(2 downto 1) = "10") or (s_sel_ex = "111")) else
+			   s_alu_b_before_fwd;
+	
+	s_alu_a_before_fwd <= s_q1_ex;
+
 	s_alu_b_before_fwd <= s_q2_ex when (s_sel_ex = "001" or s_sel_ex(2 downto 1) = "10") else
 								 s_imm_ex when (s_sel_ex(2 downto 1) = "01") else
 								 (others => '0');
-				  
-	s_alu_b <= s_alu_res_wb when (s_rr2_ex = s_wr_wb and s_rr2_ex /= "000") else
-				  s_alu_b_before_fwd;
-	
+
 	GENALU: alu
 	generic map (
 		size => 16
@@ -272,15 +287,18 @@ begin
 	s_jump_ex <= '1' when ((s_sel_ex = "100" and s_zero_ex = '1') or
 						   (s_sel_ex = "101" and (s_negative_ex /= s_overflow_ex))) else
 	'0';
+
+	s_regWrite_ex_after_branch <= '0' when ((s_sel_ex = "100" or s_sel_ex = "101") and s_jump_ex = '0') else
+								   s_regWrite_ex;
 	
-	--            3          16             3          16        3          1               3
-	s_ex_wb_in <= s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b & s_rr2_ex & s_regWrite_ex & s_wr_ex;
+	--            16				  3          16             3          16        3          1                            3
+	s_ex_wb_in <= s_inst_address_ex & s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b & s_rr2_ex & s_regWrite_ex_after_branch & s_wr_ex;
 	
 	s_ex_wb_clear <= reset;
 	
 	REG_EX_WB: register_d
 	generic map (
-		N => 45
+		N => 61
 	)
 	port map (
       clock => clock,
@@ -290,6 +308,7 @@ begin
       Q => s_ex_wb_out
 	);
 	
+	s_inst_address_wb <= s_ex_wb_out(60 downto 45);
 	s_sel_wb <= s_ex_wb_out(44 downto 42);
 	s_alu_res_wb <= s_ex_wb_out(41 downto 26);
 	s_rr1_wb <= s_ex_wb_out(25 downto 23);
@@ -299,7 +318,7 @@ begin
 	s_wr_wb <= s_ex_wb_out(2 downto 0);
 	
 	s_data_address <= s_alu_res_wb when (s_sel_wb(2 downto 1) = "11") else
-							(others => '0');
+					  (others => '0');
 							
 	s_data_in <= data_in;
 							
@@ -309,6 +328,7 @@ begin
 	data_out <= s_alu_b_wb;
 	
 	s_res_to_write <= s_data_in when (s_sel_wb = "110") else
-							s_alu_res_wb;
+					  s_inst_address_wb when (s_sel_wb(2 downto 1) = "10") else
+					  s_alu_res_wb;
 	
 end architecture;

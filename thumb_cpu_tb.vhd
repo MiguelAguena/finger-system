@@ -36,7 +36,7 @@ architecture arch of thumb_cpu_tb is
 		 generic (
 			  addr_s : natural := 16;
 			  word_s : natural := 16;
-			  init_f : string  := "rom.dat"
+			  init_f : string  := "../rom.txt"
 		 );
 		 port (
 			  addr : in  std_logic_vector(addr_s-1 downto 0);
@@ -48,7 +48,7 @@ architecture arch of thumb_cpu_tb is
 		 generic (
 			  addr_s : natural := 16;
 			  word_s : natural := 16;
-			  init_f : string  := "ram.dat"
+			  init_f : string  := "../ram.txt"
 		 );
 		 port (
 			  ck     : in  std_logic;
@@ -89,13 +89,13 @@ begin
 			data_address => s_data_address
 		);
 	
-		MEM_INST: entity work.rom(rom_modelsim)
+		MEM_INST: rom
 		 port map (
 			  addr => s_inst_address,
 			  data => s_inst_in
 		 );
 		 
-		MEM_DATA: entity work.ram(ram_modelsim)
+		MEM_DATA: ram
 		 port map (
 			  ck => clock_in,
 			  wr => s_data_write,
@@ -106,7 +106,9 @@ begin
 	  
 	  p0: process(clock_in) is
 	  begin
-		s_counter <= s_counter + 1;
+		if rising_edge(clock_in) then 
+			s_counter <= s_counter + 1;
+		end if;
 	  end process p0;
 	  
 	  counter <= s_counter;
