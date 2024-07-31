@@ -50,8 +50,8 @@ architecture ram_1 of ram is
 begin
     p0: process (ck, wr, data_i, addr) is
     begin
-        if(ck = '1' AND wr = '1') then
-            mem(to_integer(unsigned(addr))) <= data_i;
+        if(rising_edge(ck) AND wr = '1') then
+            mem(to_integer(unsigned(addr(addr_s-1 downto 1)))) <= data_i;
         end if;
     end process p0;
 

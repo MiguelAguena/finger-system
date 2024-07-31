@@ -78,6 +78,10 @@ architecture thumbv1 of thumb_cpu is
 		 );
 	end component register_d;
 	
+	signal s_interrupt_counter : integer := 0;
+	signal s_interrupt_stalling : std_logic := '0';
+	signal s_interrupt_load_pc : std_logic := '0';
+
 	signal s_inst_address : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_pc_plus_2 : std_logic_vector(word_size-1 downto 0);
 	signal s_number_2 : std_logic_vector(word_size-1 downto 0) := (1 => '1', others => '0');
@@ -130,6 +134,8 @@ architecture thumbv1 of thumb_cpu is
 	signal s_alu_b : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_alu_a_before_fwd : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_alu_b_before_fwd : std_logic_vector(word_size-1 downto 0) := (others => '0');
+	signal s_alu_a_after_fwd : std_logic_vector(word_size-1 downto 0) := (others => '0');
+	signal s_alu_b_after_fwd : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_alu_res_ex : std_logic_vector(word_size-1 downto 0);
 	signal s_zero_ex : std_logic;
 	signal s_negative_ex : std_logic;
@@ -141,7 +147,7 @@ architecture thumbv1 of thumb_cpu is
 	signal s_sel_wb : std_logic_vector(2 downto 0);
 	signal s_alu_res_wb : std_logic_vector(word_size-1 downto 0);
 	signal s_rr1_wb : std_logic_vector(2 downto 0);
-	signal s_alu_b_wb : std_logic_vector(word_size-1 downto 0) := (others => '0');
+	signal s_alu_b_after_fwd_wb : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_rr2_wb : std_logic_vector(2 downto 0);
 	signal s_regWrite_wb : std_logic;
 	signal s_wr_wb : std_logic_vector(natural(ceil(log2(real(reg_n)))) -1 downto 0) := (others => '0');
@@ -154,10 +160,28 @@ architecture thumbv1 of thumb_cpu is
 	signal s_pc_input : std_logic_vector(word_size-1 downto 0) := (others => '0');
 	signal s_res_to_write : std_logic_vector(word_size-1 downto 0);
 begin
+
+	INTERRUPT_COUNTER: process(clock, interrupt, s_interrupt_counter, s_interrupt_stalling, s_interrupt_load_pc) is
+	begin
+		if(rising_edge(clock)) then
+			if(interrupt = '1') then
+				s_interrupt_counter <= 2;
+				s_interrupt_stalling <= '1';
+			elsif(s_interrupt_counter > 0) then
+				s_interrupt_counter <= s_interrupt_counter - 1;
+			elsif(s_interrupt_stalling = '1' and s_interrupt_load_pc = '0') then
+				s_interrupt_counter <= 0;
+				s_interrupt_stalling <= '0';
+				s_interrupt_load_pc <= '1';
+			else
+				s_interrupt_load_pc <= '0';
+			end if;
+		end if;
+	end process;
+
 	--FETCH
 	inst_address <= s_inst_address;
 	data_address <= s_data_address;
-	s_inst_in <= inst_in;
 	s_sel_if <= s_inst_in(15 downto 13);
 	
 	ADDER2: alu
@@ -170,6 +194,11 @@ begin
 		F => s_pc_plus_2,
 		S => s_op_sum
 	);
+
+	s_inst_in <= inst_in when (s_interrupt_stalling = '0' and s_interrupt_load_pc = '0') else
+				 "0011100001110000" when (s_interrupt_stalling = '0' and s_interrupt_load_pc = '1') else
+				 "0000000000000000";
+				 
 	
 	s_regWritePC <= NOT(s_processor_stall);
 	s_regWrite <= '1' when (s_sel_if /= "000" and s_sel_if /= "111") else
@@ -196,8 +225,11 @@ begin
 						s_inst_in(6 downto 5) when (s_sel_if = "011") else
 						(others => '0');
 	
-	s_pc_input <= s_pc_plus_2 when (s_jump_ex = '0') else
-				  s_alu_b_before_fwd;
+	s_pc_input <= "00000000000" & irq & "00" when (s_interrupt_load_pc = '1') else
+				  s_pc_input when (s_interrupt_stalling = '1' and s_jump_ex = '0') else
+				  s_alu_b when (s_interrupt_stalling = '1' and s_jump_ex = '1') else
+				  s_pc_plus_2 when (s_jump_ex = '0') else
+				  s_alu_b;
 
 	s_d <= s_res_to_write;
 	
@@ -257,16 +289,20 @@ begin
 	s_regWrite_ex <= s_if_ex_out(3);
 	s_wr_ex <= s_if_ex_out(2 downto 0);
 	
-	s_alu_a <= s_res_to_write when (s_rr1_ex = s_wr_wb and s_rr1_ex /= "000") else
-				  s_alu_a_before_fwd;
+	s_alu_a <= s_alu_a_after_fwd;
 	
-	s_alu_b <= s_res_to_write when (s_rr2_ex = s_wr_wb and s_rr2_ex /= "000") else
-			   (others => '0') when ((s_sel_ex(2 downto 1) = "10") or (s_sel_ex = "111")) else
-			   s_alu_b_before_fwd;
+	s_alu_b <= (others => '0') when (s_sel_ex(2) = '1') else
+			   s_alu_b_after_fwd;
+
+	s_alu_a_after_fwd <= s_res_to_write when (s_rr1_ex = s_wr_wb and s_rr1_ex /= "000") else
+						 s_alu_a_before_fwd;
+
+	s_alu_b_after_fwd <= s_res_to_write when (s_rr2_ex = s_wr_wb and s_rr2_ex /= "000") else
+						 s_alu_b_before_fwd;
 	
 	s_alu_a_before_fwd <= s_q1_ex;
 
-	s_alu_b_before_fwd <= s_q2_ex when (s_sel_ex = "001" or s_sel_ex(2 downto 1) = "10") else
+	s_alu_b_before_fwd <= s_q2_ex when (s_sel_ex = "001" or s_sel_ex(2) = '1') else
 								 s_imm_ex when (s_sel_ex(2 downto 1) = "01") else
 								 (others => '0');
 
@@ -291,8 +327,8 @@ begin
 	s_regWrite_ex_after_branch <= '0' when ((s_sel_ex = "100" or s_sel_ex = "101") and s_jump_ex = '0') else
 								   s_regWrite_ex;
 	
-	--            16				  3          16             3          16        3          1                            3
-	s_ex_wb_in <= s_inst_address_ex & s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b & s_rr2_ex & s_regWrite_ex_after_branch & s_wr_ex;
+	--            16				  3          16             3          16                  3          1                            3
+	s_ex_wb_in <= s_inst_address_ex & s_sel_ex & s_alu_res_ex & s_rr1_ex & s_alu_b_after_fwd & s_rr2_ex & s_regWrite_ex_after_branch & s_wr_ex;
 	
 	s_ex_wb_clear <= reset;
 	
@@ -312,7 +348,7 @@ begin
 	s_sel_wb <= s_ex_wb_out(44 downto 42);
 	s_alu_res_wb <= s_ex_wb_out(41 downto 26);
 	s_rr1_wb <= s_ex_wb_out(25 downto 23);
-	s_alu_b_wb <= s_ex_wb_out(22 downto 7);
+	s_alu_b_after_fwd_wb <= s_ex_wb_out(22 downto 7);
 	s_rr2_wb <= s_ex_wb_out(6 downto 4);
 	s_regWrite_wb <= s_ex_wb_out(3);
 	s_wr_wb <= s_ex_wb_out(2 downto 0);
@@ -325,7 +361,9 @@ begin
 	data_write <= '1' when (s_sel_wb = "111") else
 					  '0';
 					  
-	data_out <= s_alu_b_wb;
+	s_data_out <= s_alu_b_after_fwd_wb;
+
+	data_out <= s_data_out;
 	
 	s_res_to_write <= s_data_in when (s_sel_wb = "110") else
 					  s_inst_address_wb when (s_sel_wb(2 downto 1) = "10") else

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for thumb
-Thu Jul 18 11:22:02 2024
+Wed Jul 31 16:46:20 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -23,31 +23,30 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
  15. Parameter Settings for User Entity Instance: thumb_cpu:DUT|register_d:REG_EX_WB
  16. Parameter Settings for User Entity Instance: rom:MEM_INST
  17. Parameter Settings for User Entity Instance: ram:MEM_DATA
- 18. Port Connectivity Checks: "ram:MEM_DATA"
- 19. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"
- 20. Port Connectivity Checks: "thumb_cpu:DUT|alu:GENALU"
- 21. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_IF_EX"
- 22. Port Connectivity Checks: "thumb_cpu:DUT|regfile:REGS"
- 23. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"
- 24. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"
- 25. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"
- 26. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"
- 27. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"
- 28. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"
- 29. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"
- 30. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"
- 31. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"
- 32. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"
- 33. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"
- 34. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"
- 35. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"
- 36. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"
- 37. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"
- 38. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2"
- 39. Port Connectivity Checks: "thumb_cpu:DUT"
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Analysis & Synthesis Messages
+ 18. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"
+ 19. Port Connectivity Checks: "thumb_cpu:DUT|alu:GENALU"
+ 20. Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_IF_EX"
+ 21. Port Connectivity Checks: "thumb_cpu:DUT|regfile:REGS"
+ 22. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:0:FIRST:ALU_FIRST"
+ 23. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:1:MID:ALU_I"
+ 24. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:2:MID:ALU_I"
+ 25. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:3:MID:ALU_I"
+ 26. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:4:MID:ALU_I"
+ 27. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:5:MID:ALU_I"
+ 28. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:6:MID:ALU_I"
+ 29. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:7:MID:ALU_I"
+ 30. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:8:MID:ALU_I"
+ 31. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:9:MID:ALU_I"
+ 32. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:10:MID:ALU_I"
+ 33. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:11:MID:ALU_I"
+ 34. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:12:MID:ALU_I"
+ 35. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:13:MID:ALU_I"
+ 36. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:14:MID:ALU_I"
+ 37. Port Connectivity Checks: "thumb_cpu:DUT|alu:ADDER2"
+ 38. Port Connectivity Checks: "thumb_cpu:DUT"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
 
 
 
@@ -74,13 +73,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jul 18 11:22:02 2024          ;
+; Analysis & Synthesis Status     ; Successful - Wed Jul 31 16:46:20 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; thumb                                          ;
 ; Top-level Entity Name           ; thumb_cpu_tb                                   ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 0                                              ;
+; Total registers                 ; 31                                             ;
 ; Total pins                      ; 31                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0                                              ;
@@ -213,31 +212,31 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
 
 
-+------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary          ;
-+---------------------------------------------+--------+
-; Resource                                    ; Usage  ;
-+---------------------------------------------+--------+
-; Estimate of Logic utilization (ALMs needed) ; 16     ;
-;                                             ;        ;
-; Combinational ALUT usage for logic          ; 31     ;
-;     -- 7 input functions                    ; 0      ;
-;     -- 6 input functions                    ; 0      ;
-;     -- 5 input functions                    ; 0      ;
-;     -- 4 input functions                    ; 0      ;
-;     -- <=3 input functions                  ; 31     ;
-;                                             ;        ;
-; Dedicated logic registers                   ; 0      ;
-;                                             ;        ;
-; I/O pins                                    ; 31     ;
-;                                             ;        ;
-; Total DSP Blocks                            ; 0      ;
-;                                             ;        ;
-; Maximum fan-out node                        ; Add0~1 ;
-; Maximum fan-out                             ; 3      ;
-; Total fan-out                               ; 123    ;
-; Average fan-out                             ; 1.32   ;
-+---------------------------------------------+--------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 16             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 32             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 0              ;
+;     -- 5 input functions                    ; 0              ;
+;     -- 4 input functions                    ; 0              ;
+;     -- <=3 input functions                  ; 32             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 31             ;
+;                                             ;                ;
+; I/O pins                                    ; 31             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; s_counter[0]~2 ;
+; Maximum fan-out                             ; 32             ;
+; Total fan-out                               ; 186            ;
+; Average fan-out                             ; 1.49           ;
++---------------------------------------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,49 +244,19 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
-; |thumb_cpu_tb              ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 31   ; 0            ; |thumb_cpu_tb       ; thumb_cpu_tb ; work         ;
+; |thumb_cpu_tb              ; 32 (32)             ; 31 (31)                   ; 0                 ; 0          ; 31   ; 0            ; |thumb_cpu_tb       ; thumb_cpu_tb ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; counter[0]~0                                           ;    ;
-; counter[1]~1                                           ;    ;
-; counter[2]~2                                           ;    ;
-; counter[3]~3                                           ;    ;
-; counter[4]~4                                           ;    ;
-; counter[5]~5                                           ;    ;
-; counter[6]~6                                           ;    ;
-; counter[7]~7                                           ;    ;
-; counter[8]~8                                           ;    ;
-; counter[9]~9                                           ;    ;
-; counter[10]~10                                         ;    ;
-; counter[11]~11                                         ;    ;
-; counter[12]~12                                         ;    ;
-; counter[13]~13                                         ;    ;
-; counter[14]~14                                         ;    ;
-; counter[15]~15                                         ;    ;
-; counter[16]~16                                         ;    ;
-; counter[17]~17                                         ;    ;
-; counter[18]~18                                         ;    ;
-; counter[19]~19                                         ;    ;
-; counter[20]~20                                         ;    ;
-; counter[21]~21                                         ;    ;
-; counter[22]~22                                         ;    ;
-; counter[23]~23                                         ;    ;
-; counter[24]~24                                         ;    ;
-; counter[25]~25                                         ;    ;
-; counter[26]~26                                         ;    ;
-; counter[27]~27                                         ;    ;
-; counter[28]~28                                         ;    ;
-; counter[29]~29                                         ;    ;
-; counter[30]~30                                         ;    ;
-; Number of logic cells representing combinational loops ; 31 ;
-+--------------------------------------------------------+----+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; s_counter[0]~0                                         ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -296,7 +265,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 31    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -346,7 +315,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                   ;
 +----------------+-------+--------------------------------------------------------+
-; n              ; 63    ; Signed Integer                                         ;
+; n              ; 79    ; Signed Integer                                         ;
 +----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -366,52 +335,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                   ;
 +----------------+-------+--------------------------------------------------------+
-; n              ; 45    ; Signed Integer                                         ;
+; n              ; 61    ; Signed Integer                                         ;
 +----------------+-------+--------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: rom:MEM_INST ;
-+----------------+---------+--------------------------------+
-; Parameter Name ; Value   ; Type                           ;
-+----------------+---------+--------------------------------+
-; addr_s         ; 16      ; Signed Integer                 ;
-; word_s         ; 16      ; Signed Integer                 ;
-; init_f         ; rom.dat ; String                         ;
-+----------------+---------+--------------------------------+
++----------------+------------+-----------------------------+
+; Parameter Name ; Value      ; Type                        ;
++----------------+------------+-----------------------------+
+; addr_s         ; 16         ; Signed Integer              ;
+; word_s         ; 16         ; Signed Integer              ;
+; init_f         ; ../rom.txt ; String                      ;
++----------------+------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: ram:MEM_DATA ;
-+----------------+---------+--------------------------------+
-; Parameter Name ; Value   ; Type                           ;
-+----------------+---------+--------------------------------+
-; addr_s         ; 16      ; Signed Integer                 ;
-; word_s         ; 16      ; Signed Integer                 ;
-; init_f         ; ram.dat ; String                         ;
-+----------------+---------+--------------------------------+
++----------------+------------+-----------------------------+
+; Parameter Name ; Value      ; Type                        ;
++----------------+------------+-----------------------------+
+; addr_s         ; 16         ; Signed Integer              ;
+; word_s         ; 16         ; Signed Integer              ;
+; init_f         ; ../ram.txt ; String                      ;
++----------------+------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ram:MEM_DATA"                                                                         ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; data_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"                                                   ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; q[3]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT|register_d:REG_EX_WB"                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; enable    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; q[25..23] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; q[6..4]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -592,16 +553,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "thumb_cpu:DUT"                                                                           ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                             ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
-; reset     ; Input  ; Info     ; Stuck at GND                                                                        ;
-; interrupt ; Input  ; Info     ; Stuck at GND                                                                        ;
-; irq       ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------+--------+----------+-------------------------------------------------------------------------------------+
++---------------------------------------------+
+; Port Connectivity Checks: "thumb_cpu:DUT"   ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; reset     ; Input ; Info     ; Stuck at GND ;
+; interrupt ; Input ; Info     ; Stuck at GND ;
+; irq       ; Input ; Info     ; Stuck at GND ;
++-----------+-------+----------+--------------+
 
 
 +-----------------------------------------------------+
@@ -609,16 +569,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 31                          ;
+; arriav_ff             ; 31                          ;
+;     plain             ; 31                          ;
+; arriav_lcell_comb     ; 32                          ;
 ;     arith             ; 30                          ;
 ;         1 data inputs ; 29                          ;
 ;         2 data inputs ; 1                           ;
-;     normal            ; 1                           ;
-;         1 data inputs ; 1                           ;
+;     normal            ; 2                           ;
+;         1 data inputs ; 2                           ;
 ; boundary_port         ; 31                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.90                        ;
-; Average LUT depth     ; 2.91                        ;
+; Average LUT depth     ; 2.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -637,7 +599,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Thu Jul 18 11:21:37 2024
+    Info: Processing started: Wed Jul 31 16:45:54 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off thumb -c thumb
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -654,9 +616,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file alu_1_b
 Info (12021): Found 2 design units, including 1 entities, in source file thumb_cpu.vhd
     Info (12022): Found design unit 1: thumb_cpu-thumbv1 File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 30
     Info (12023): Found entity 1: thumb_cpu File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 8
-Info (12021): Found 3 design units, including 1 entities, in source file ram.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
     Info (12022): Found design unit 1: ram-ram_1 File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 21
-    Info (12022): Found design unit 2: ram-ram_modelsim File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 60
     Info (12023): Found entity 1: ram File: /home/miguelaguena/Documents/thumb/ram.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file register_d.vhd
     Info (12022): Found design unit 1: register_d-comportamental File: /home/miguelaguena/Documents/thumb/register_d.vhd Line: 17
@@ -664,42 +625,56 @@ Info (12021): Found 2 design units, including 1 entities, in source file registe
 Info (12021): Found 2 design units, including 1 entities, in source file regfile.vhd
     Info (12022): Found design unit 1: regfile-regfile_1 File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 27
     Info (12023): Found entity 1: regfile File: /home/miguelaguena/Documents/thumb/regfile.vhd Line: 6
-Info (12021): Found 3 design units, including 1 entities, in source file rom.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file rom.vhd
     Info (12022): Found design unit 1: rom-rom_1 File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 18
-    Info (12022): Found design unit 2: rom-rom_modelsim File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 52
     Info (12023): Found entity 1: rom File: /home/miguelaguena/Documents/thumb/rom.vhd Line: 6
 Info (12127): Elaborating entity "thumb_cpu_tb" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(65): used implicit default value for signal "s_data_in" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 65
-Warning (10036): Verilog HDL or VHDL warning at thumb_cpu_tb.vhd(67): object "s_data_out" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 67
 Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(71): used explicit default value for signal "s_zero" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 71
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(72): used explicit default value for signal "s_zero_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 72
-Warning (10492): VHDL Process Statement warning at thumb_cpu_tb.vhd(109): signal "s_counter" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 109
-Info (12128): Elaborating entity "thumb_cpu" for hierarchy "thumb_cpu:DUT" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 78
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(83): used explicit default value for signal "s_number_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 83
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(84): used explicit default value for signal "s_op_sum" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 84
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(89): used explicit default value for signal "s_processor_stall" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 89
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(95): used explicit default value for signal "s_lp_reg" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 95
-Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(103): used explicit default value for signal "s_signal_1" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 103
-Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(141): object "s_regWrite_wb" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 141
-Info (12128): Elaborating entity "alu" for hierarchy "thumb_cpu:DUT|alu:ADDER2" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 158
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(72): used explicit default value for signal "s_interrupt" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 72
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu_tb.vhd(73): used explicit default value for signal "s_irq" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 73
+Info (12128): Elaborating entity "thumb_cpu" for hierarchy "thumb_cpu:DUT" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 79
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(87): used explicit default value for signal "s_number_2" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 87
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(88): used explicit default value for signal "s_op_sum" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 88
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(93): used explicit default value for signal "s_processor_stall" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 93
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(99): used explicit default value for signal "s_lp_reg" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 99
+Warning (10540): VHDL Signal Declaration warning at thumb_cpu.vhd(109): used explicit default value for signal "s_signal_1" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 109
+Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(149): object "s_rr1_wb" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 149
+Warning (10036): Verilog HDL or VHDL warning at thumb_cpu.vhd(151): object "s_rr2_wb" assigned a value but never read File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 151
+Info (10041): Inferred latch for "s_pc_input[0]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[1]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[2]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[3]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[4]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[5]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[6]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[7]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[8]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[9]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[10]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[11]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[12]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[13]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[14]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (10041): Inferred latch for "s_pc_input[15]" at thumb_cpu.vhd(228) File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 228
+Info (12128): Elaborating entity "alu" for hierarchy "thumb_cpu:DUT|alu:ADDER2" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 187
 Warning (10540): VHDL Signal Declaration warning at alu.vhd(36): used explicit default value for signal "zero_aux" because signal was never assigned a value File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 36
 Info (12128): Elaborating entity "alu_1_bit" for hierarchy "thumb_cpu:DUT|alu:ADDER2|alu_1_bit:\ALUS:15:LAST:ALU_LAST" File: /home/miguelaguena/Documents/thumb/alu.vhd Line: 43
-Info (12128): Elaborating entity "regfile" for hierarchy "thumb_cpu:DUT|regfile:REGS" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 199
-Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_IF_EX" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 226
-Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_EX_WB" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 289
-Info (12129): Elaborating entity "rom" using architecture "A:rom_modelsim" for hierarchy "rom:MEM_INST" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 92
-Info (12129): Elaborating entity "ram" using architecture "A:ram_modelsim" for hierarchy "ram:MEM_DATA" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 98
+Info (12128): Elaborating entity "regfile" for hierarchy "thumb_cpu:DUT|regfile:REGS" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 236
+Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_IF_EX" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 269
+Info (12128): Elaborating entity "register_d" for hierarchy "thumb_cpu:DUT|register_d:REG_EX_WB" File: /home/miguelaguena/Documents/thumb/thumb_cpu.vhd Line: 335
+Info (12128): Elaborating entity "rom" for hierarchy "rom:MEM_INST" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 93
+Info (12128): Elaborating entity "ram" for hierarchy "ram:MEM_DATA" File: /home/miguelaguena/Documents/thumb/thumb_cpu_tb.vhd Line: 99
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 62 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 63 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 0 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 31 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 932 megabytes
-    Info: Processing ended: Thu Jul 18 11:22:02 2024
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:40
+    Info (21061): Implemented 32 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 926 megabytes
+    Info: Processing ended: Wed Jul 31 16:46:20 2024
+    Info: Elapsed time: 00:00:26
+    Info: Total CPU time (on all processors): 00:00:42
 
 

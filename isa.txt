@@ -9,16 +9,16 @@ Immediate Load -- REGD = IMM
 SEL-REGD-IMM
 010-xxx -xxxxxxxxxx
 
-Immediate ALU Instructions -- REGD = REG1 (ALU) IMM 
-SEL-REGD-REG1-ALU-IMM  
+Immediate ALU Instructions -- REGD = REG1 (ALU) IMM
+SEL-REGD-REG1-ALU-IMM
 011-xxx -xxx -xx -xxxxx
 
 Branch if Zero -- JL=PC; PC=REGM if REG1 = 0
-SEL-REGM-REG1-(unused) 
+SEL-REGM-REG1-(unused)
 100-xxx -xxx -0000000
 
 Branch if Negative -- JL=PC; PC=REGM if REG1 < 0
-SEL-REGM-REG1-(unused) 
+SEL-REGM-REG1-(unused)
 101-xxx -xxx -0000000
 
 Load -- REGD = [REG1]

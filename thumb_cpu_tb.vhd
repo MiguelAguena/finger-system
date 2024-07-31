@@ -69,7 +69,8 @@ architecture arch of thumb_cpu_tb is
 	signal s_inst_address : std_logic_vector(15 downto 0);
 	signal s_data_address : std_logic_vector(15 downto 0)	;
 	signal s_zero : std_logic := '0';
-	signal s_zero_2 : std_logic_vector(1 downto 0) := "00";
+	signal s_interrupt : std_logic := '0';
+	signal s_irq : std_logic_vector(1 downto 0) := "00";
 	
 	signal s_counter : natural := 0;
 begin
@@ -79,8 +80,8 @@ begin
 		port map (
 			clock => clock_in,
 			reset => s_zero,
-			interrupt => s_zero,
-			irq => s_zero_2,
+			interrupt => s_interrupt,
+			irq => s_irq,
 			data_in => s_data_in,
 			data_write => s_data_write,
 			data_out => s_data_out,
@@ -100,11 +101,11 @@ begin
 			  ck => clock_in,
 			  wr => s_data_write,
 			  addr => s_data_address,
-			  data_i => s_data_in,
-			  data_o => s_data_out
+			  data_i => s_data_out,
+			  data_o => s_data_in
 	  );
 	  
-	  p0: process(clock_in) is
+	  p0: process(clock_in, s_counter) is
 	  begin
 		if rising_edge(clock_in) then 
 			s_counter <= s_counter + 1;

@@ -37,7 +37,7 @@ begin
                     zerando: for i in 0 to reg_n-2 loop
                         regbank(i) <= (others => '0');
                     end loop;
-						  regbank(reg_n-1) <= "1111111111111110";
+						  regbank(reg_n-1) <= PC_reset;
                 else
 					     if(regWrite = '1' and to_integer(unsigned(wr)) /= 0 and to_integer(unsigned(wr)) /= (reg_n - 1)) then
 						      regbank(to_integer(unsigned(wr))) <= d;
