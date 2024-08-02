@@ -7,6 +7,7 @@ entity ram is
     generic (
         addr_s : natural := 16;
         word_s : natural := 16;
+        size   : natural := 1024;
         init_f : string  := "ram.txt"
     );
     port (
@@ -19,7 +20,7 @@ entity ram is
 end ram;
 
 architecture ram_1 of ram is
-    type memory_type is array (0 to (2 ** addr_s) - 1) of std_logic_vector(word_s-1 downto 0);
+    type memory_type is array (0 to (size - 1)) of std_logic_vector(word_s-1 downto 0);
 
     impure function init_mem(mif_file_name : in string) return memory_type is
         file mif_file : text open read_mode is mif_file_name;

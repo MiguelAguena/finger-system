@@ -15,7 +15,7 @@ architecture arch of thumb_cpu_tb is
 			reg_n: natural := 8;
 			word_size : natural := 16;
 			irq_size : natural := 2;
-			PC_reset: std_logic_vector(15 downto 0) := "1111111111111110"
+			PC_reset: std_logic_vector(15 downto 0) := "0000000000100000"
 		);
 		
 		port (
@@ -32,32 +32,21 @@ architecture arch of thumb_cpu_tb is
 		);
 	end component thumb_cpu;
 	
-	component rom is
-		 generic (
-			  addr_s : natural := 16;
-			  word_s : natural := 16;
-			  init_f : string  := "../rom.txt"
-		 );
-		 port (
-			  addr : in  std_logic_vector(addr_s-1 downto 0);
-			  data : out std_logic_vector(word_s-1 downto 0)
-		 );
-	end component rom;
-
-	component ram is
-		 generic (
-			  addr_s : natural := 16;
-			  word_s : natural := 16;
-			  init_f : string  := "../ram.txt"
-		 );
-		 port (
-			  ck     : in  std_logic;
-			  wr     : in  std_logic;
-			  addr   : in  std_logic_vector(addr_s-1 downto 0);
-			  data_i : in  std_logic_vector(word_s-1 downto 0);
-			  data_o : out std_logic_vector(word_s-1 downto 0)
-		 );
-	end component ram;
+	component mem_ctrl is
+		generic (
+			addr_s : natural := 16;
+			word_s : natural := 16
+		);
+		port (
+			ck : in  std_logic;
+			wr : in  std_logic;
+			data_addr : in  std_logic_vector(addr_s-1 downto 0);
+			data_i : in  std_logic_vector(word_s-1 downto 0);
+			data_o : out std_logic_vector(word_s-1 downto 0);
+			inst_addr : in  std_logic_vector(addr_s-1 downto 0);
+			inst_o : out std_logic_vector(word_s-1 downto 0)
+		);
+	end component mem_ctrl;
   
 	signal clock_in : std_logic := '0';
 	constant clockPeriod : time := 20 ns; -- clock de 50MHz
@@ -67,7 +56,7 @@ architecture arch of thumb_cpu_tb is
 	signal s_data_out : std_logic_vector(15 downto 0);
 	signal s_inst_in : std_logic_vector(15 downto 0);
 	signal s_inst_address : std_logic_vector(15 downto 0);
-	signal s_data_address : std_logic_vector(15 downto 0)	;
+	signal s_data_address : std_logic_vector(15 downto 0);
 	signal s_zero : std_logic := '0';
 	signal s_interrupt : std_logic := '0';
 	signal s_irq : std_logic_vector(1 downto 0) := "00";
@@ -89,21 +78,17 @@ begin
 			inst_address => s_inst_address,
 			data_address => s_data_address
 		);
-	
-		MEM_INST: rom
-		 port map (
-			  addr => s_inst_address,
-			  data => s_inst_in
-		 );
-		 
-		MEM_DATA: ram
-		 port map (
-			  ck => clock_in,
-			  wr => s_data_write,
-			  addr => s_data_address,
-			  data_i => s_data_out,
-			  data_o => s_data_in
-	  );
+
+	  MEM: mem_ctrl
+	  port map (
+			ck => clock_in,
+			wr => s_data_write,
+			data_addr => s_data_address,
+			data_i => s_data_out,
+			data_o => s_data_in,
+			inst_addr => s_inst_address,
+			inst_o => s_inst_in
+   	  );
 	  
 	  p0: process(clock_in, s_counter) is
 	  begin

@@ -7,6 +7,7 @@ entity rom is
     generic (
         addr_s : natural := 16;
         word_s : natural := 16;
+        size   : natural := 1024;
         init_f : string  := "rom.txt"
     );
     port (
@@ -16,7 +17,7 @@ entity rom is
 end rom;
 
 architecture rom_1 of rom is
-    type memory_type is array (0 to (2 ** addr_s) - 1) of std_logic_vector(word_s-1 downto 0);
+    type memory_type is array (0 to (size - 1)) of std_logic_vector(word_s-1 downto 0);
 
     signal mem : memory_type;
 

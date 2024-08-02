@@ -36,17 +36,21 @@ add wave -noupdate /thumb_cpu_tb/DUT/data_address
 add wave -noupdate /thumb_cpu_tb/DUT/data_in
 add wave -noupdate /thumb_cpu_tb/DUT/data_out
 add wave -noupdate -divider <NULL>
-add wave -noupdate /thumb_cpu_tb/MEM_DATA/addr
-add wave -noupdate /thumb_cpu_tb/MEM_DATA/data_i
-add wave -noupdate /thumb_cpu_tb/DUT/data_write
-add wave -noupdate -expand /thumb_cpu_tb/MEM_DATA/mem
-add wave -noupdate -divider <NULL>
 add wave -noupdate /thumb_cpu_tb/DUT/interrupt
 add wave -noupdate /thumb_cpu_tb/DUT/irq
 add wave -noupdate /thumb_cpu_tb/DUT/s_interrupt_load_pc
 add wave -noupdate /thumb_cpu_tb/DUT/s_interrupt_stalling
+add wave -noupdate -divider <NULL>
+add wave -noupdate /thumb_cpu_tb/MEM/data_addr
+add wave -noupdate /thumb_cpu_tb/MEM/data_i
+add wave -noupdate /thumb_cpu_tb/MEM/inst_addr
+add wave -noupdate /thumb_cpu_tb/MEM/s_data_addr
+add wave -noupdate /thumb_cpu_tb/MEM/s_data_i
+add wave -noupdate /thumb_cpu_tb/MEM/s_data_o
+add wave -noupdate /thumb_cpu_tb/MEM/s_inst_addr
+add wave -noupdate /thumb_cpu_tb/MEM/s_inst_o
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {392 ns} 0}
+WaveRestoreCursors {{Cursor 1} {0 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 275
 configure wave -valuecolwidth 125
@@ -62,4 +66,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {371 ns} {507 ns}
+WaveRestoreZoom {0 ns} {136 ns}
