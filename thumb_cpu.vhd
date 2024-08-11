@@ -9,7 +9,7 @@ entity thumb_cpu is
 	generic (
 	   reg_n: natural := 8;
 		word_size : natural := 16;
-		irq_size : natural := 2;
+		irq_size : natural := 3;
 		PC_reset: std_logic_vector(15 downto 0) := "1111111111111110"
 	);
 	
@@ -225,7 +225,7 @@ begin
 						s_inst_in(6 downto 5) when (s_sel_if = "011") else
 						(others => '0');
 	
-	s_pc_input <= "0000000000" & irq & "000" when (s_interrupt_load_pc = '1') else
+	s_pc_input <= "00000000" & irq & "0000" when (s_interrupt_load_pc = '1') else
 				  s_pc_input when (s_interrupt_stalling = '1' and s_jump_ex = '0') else
 				  s_alu_b when (s_interrupt_stalling = '1' and s_jump_ex = '1') else
 				  s_pc_plus_2 when (s_jump_ex = '0') else

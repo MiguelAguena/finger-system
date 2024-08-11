@@ -14,8 +14,8 @@ architecture arch of thumb_cpu_tb is
 		generic (
 			reg_n: natural := 8;
 			word_size : natural := 16;
-			irq_size : natural := 2;
-			PC_reset: std_logic_vector(15 downto 0) := "0000000000100000"
+			irq_size : natural := 3;
+			PC_reset: std_logic_vector(15 downto 0) := "0000000010000000"
 		);
 		
 		port (
@@ -59,7 +59,7 @@ architecture arch of thumb_cpu_tb is
 	signal s_data_address : std_logic_vector(15 downto 0);
 	signal s_zero : std_logic := '0';
 	signal s_interrupt : std_logic := '0';
-	signal s_irq : std_logic_vector(1 downto 0) := "00";
+	signal s_irq : std_logic_vector(2 downto 0) := "000";
 	
 	signal s_counter : natural := 0;
 begin

@@ -65,13 +65,15 @@ begin
     s_inst_addr <= inst_addr;
     inst_o <= s_inst_o;
 
-    s_inst_o <= s_interrupt_handlers_o when (to_integer(unsigned(s_inst_addr)) < 32) else
-                s_game_o when (to_integer(unsigned(s_inst_addr)) < 4128) else
+    s_inst_o <= s_interrupt_handlers_o when (to_integer(unsigned(s_inst_addr)) < 256) else
+    --corrigir o resto
+                s_game_o when (to_integer(unsigned(s_inst_addr)) < 4224) else
                 (others => '0');
 
+    --corrigir o resto
     s_game_addr_aux <= std_logic_vector(to_unsigned(to_integer(unsigned(s_inst_addr)) - 32, 16));
 
-    s_interrupt_handlers_addr <= "0000000000" & inst_addr(5 downto 0);
+    s_interrupt_handlers_addr <= "00000000" & inst_addr(7 downto 0);
     s_game_addr <= "0000" & s_game_addr_aux(11 downto 0);
 
     --DEFINIR OS init_f SEM O "../" NO QUARTUS
@@ -79,7 +81,7 @@ begin
     generic map (
          addr_s => 16,
          word_s => 16,
-         size   => 32,
+         size   => 128 --(256 / 2),
          init_f => "../rom_interrupt_handlers.txt"
     )
     port map (
@@ -91,7 +93,7 @@ begin
     generic map (
          addr_s => 16,
          word_s => 16,
-         size   => 4096,
+         size   => 4096 --(8192 / 2),
          init_f => "../rom_game.txt"
     )
     port map (
@@ -99,13 +101,13 @@ begin
          data => s_game_o
     );
 
-   --MEM_VIDEO: 8192 palavras
+   --MEM_VIDEO: 8192 --(16384 / 2) palavras
     
    MEM_DATA: ram
     generic map (
          addr_s => 16,
          word_s => 16,
-         size   => 32768,
+         size   => 8192 --(16384 / 2),
          init_f => "../ram_data.txt"
     )
     port map (
