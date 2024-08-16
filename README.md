@@ -1,2 +1,2 @@
-# thumb
-Thumb (codename) console architecture
+# Finger System
+Finger System console architecture
