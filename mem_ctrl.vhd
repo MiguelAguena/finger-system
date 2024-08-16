@@ -136,7 +136,7 @@ begin
     '0';
 
     --DEFINIR OS init_f SEM O "../" NO QUARTUS
-    ROM_INTERRUPT_HANDLERS: rom
+    ROM_IRQ: rom
     generic map (
          addr_s => 16,
          word_s => 16,
