@@ -84,7 +84,7 @@ begin
                     s_finished_frame_reg_out when (ctrl_state_addr = "100") else
                     '0';
 
-    interrupt <= (s_input_1_up_edge and s_input_1_up_reg_out) or (s_input_1_down_edge and s_input_1_down_reg_out) or (s_input_2_up_edge and s_input_2_up_reg_out) or (s_input_2_down_edge and s_input_2_down_reg_out) or (s_finished_frame_edge and s_finished_frame_reg_out);
+    interrupt <= (s_input_1_up_edge and not(s_input_1_up_reg_out)) or (s_input_1_down_edge and not(s_input_1_down_reg_out)) or (s_input_2_up_edge and not(s_input_2_up_reg_out)) or (s_input_2_down_edge and not(s_input_2_down_reg_out)) or (s_finished_frame_edge and not(s_finished_frame_reg_out));
 
     irq <= "000" when (s_input_1_up_edge = '1') else
            "001" when (s_input_1_down_edge = '1') else
