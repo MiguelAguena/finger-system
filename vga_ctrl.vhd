@@ -93,7 +93,7 @@ begin
 						else
 							s_bit_counter <= 0;
 							if(s_vblank = '0') then
-								s_addr <= std_logic_vector(to_unsigned(to_integer(unsigned(s_addr)) + 1, addr_s));
+								s_addr <= std_logic_vector(to_unsigned(to_integer(unsigned(s_addr)) + 2, addr_s));
 							end if;
 						end if;
 					end if;
