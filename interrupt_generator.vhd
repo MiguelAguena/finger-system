@@ -86,11 +86,11 @@ begin
 
     interrupt <= (s_input_1_up_edge and not(s_input_1_up_reg_out)) or (s_input_1_down_edge and not(s_input_1_down_reg_out)) or (s_input_2_up_edge and not(s_input_2_up_reg_out)) or (s_input_2_down_edge and not(s_input_2_down_reg_out)) or (s_finished_frame_edge and not(s_finished_frame_reg_out));
 
-    irq <= "000" when (s_input_1_up_edge = '1') else
+    irq <= "100" when (s_finished_frame_edge = '1') else
+           "000" when (s_input_1_up_edge = '1') else
            "001" when (s_input_1_down_edge = '1') else
            "010" when (s_input_2_up_edge = '1') else
            "011" when (s_input_2_down_edge = '1') else
-           "100" when (s_finished_frame_edge = '1') else
            "000";
 
     FF_000: flip_flop_d
