@@ -132,7 +132,7 @@ begin
     FF_100: flip_flop_d
     port map (
         clock => ck,
-        clear => reset,
+        clear => s_finished_frame_edge,
         enable => s_wr_finished_frame,
         D => ctrl_state_i,
         Q => s_finished_frame_reg_out
